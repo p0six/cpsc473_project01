@@ -9,10 +9,10 @@ html, body {
   border-color: purple;
   border-style: solid; /* default style is 'none' */
   border-width: medium;
-  margin: 0;
   padding: 0;
   width: 100%;
   overflow: auto;
+  text-align: center;
 }
 
 .toolbar {
@@ -30,8 +30,6 @@ html, body {
   border-style: solid;
   border-width: medium;
   height: 40%;
-  text-align: center;
-  a center;
   overflow: inherit;
 }
 
@@ -44,6 +42,11 @@ html, body {
   overflow: scroll;
 }
 
-.carousel {
-  overflow: hidden;
+.carousel_class {
+  width: 90%;
+  margin: 0px auto;
+}
+
+.slick_slide {
+  width: 250px;
 }
