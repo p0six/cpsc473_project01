@@ -1,0 +1,37 @@
+{
+	"type": "UserCollection",
+	"properties": {
+		"firstName": {
+			"name": "firstName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "firstName",
+			"order": 0
+		},
+		"lastName": {
+			"name": "lastName",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "lastName",
+			"order": 1
+		},
+		"phoneNumber": {
+			"name": "phoneNumber",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "phoneNumber",
+			"order": 2
+		},
+		"socialMediaProfile": {
+			"name": "socialMediaProfile",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "socialMediaProfile",
+			"order": 3
+		}
+	}
+}

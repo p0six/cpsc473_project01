@@ -1,0 +1,49 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  /* a "%" is the percentage with respect to the elements parent. "*/
+  background-color: white;
+  border-color: purple;
+  border-style: solid; /* default style is 'none' */
+  border-width: medium;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+}
+
+.toolbar {
+  background-color: blue;
+  border-color: cyan;
+  border-style: solid;
+  border-width: medium;
+  height: 10%;
+  overflow: inherit;
+}
+
+.header {
+  background-color: green;
+  border-color: yellow;
+  border-style: solid;
+  border-width: medium;
+  height: 40%;
+  text-align: center;
+  a center;
+  overflow: inherit;
+}
+
+.details {
+  background-color: cyan;
+  border-color: gold;
+  border-style: solid;
+  border-width: medium;
+  height: 50%;
+  overflow: scroll;
+}
+
+.carousel {
+  overflow: hidden;
+}

@@ -1,0 +1,77 @@
+{
+	"type": "Collection",
+	"properties": {
+		"ownerId": {
+			"name": "ownerId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "ownerId",
+			"order": 0
+		},
+		"eventDate": {
+			"name": "eventDate",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventDate",
+			"order": 1
+		},
+		"eventTime": {
+			"name": "eventTime",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventTime",
+			"order": 2
+		},
+		"eventDuration": {
+			"name": "eventDuration",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventDuration",
+			"order": 3
+		},
+		"eventDescription": {
+			"name": "eventDescription",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventDescription",
+			"order": 4
+		},
+		"eventTags": {
+			"name": "eventTags",
+			"type": "array",
+			"typeLabel": "array",
+			"required": true,
+			"id": "eventTags",
+			"order": 5
+		},
+		"eventImage": {
+			"name": "eventImage",
+			"type": "object",
+			"typeLabel": "object",
+			"required": false,
+			"id": "eventImage",
+			"order": 6
+		},
+		"eventStreetAddress": {
+			"name": "eventStreetAddress",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventStreetAddress",
+			"order": 7
+		},
+		"eventCity": {
+			"name": "eventCity",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventCity",
+			"order": 8
+		}
+	}
+}

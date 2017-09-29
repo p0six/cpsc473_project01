@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"eventId": {
+			"name": "eventId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "eventId",
+			"order": 0
+		},
+		"userId": {
+			"name": "userId",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "userId",
+			"order": 1
+		}
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"type": "Collection",
+	"properties": {
+		"follower": {
+			"name": "follower",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "follower",
+			"order": 0
+		},
+		"following": {
+			"name": "following",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "following",
+			"order": 1
+		}
+	}
+}
