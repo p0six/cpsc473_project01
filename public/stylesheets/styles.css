@@ -6,28 +6,28 @@ html, body {
 
 body {
   /* a "%" is the percentage with respect to the elements parent. "*/
-  background-color: green;
+  /*background-color: green;*/
   border: medium solid purple;
   overflow: auto; /* if text extends beyond window, a scrollbar is added */
 }
 
 .toolbar {
-  background-color: blue; /* This is effectively meaningless... Nav brings on its own color */
+  /*background-color: blue;*/ /* This is effectively meaningless... Nav brings on its own color */
   border: medium solid cyan;
   overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
   width: 100%;
 }
 
 .header {
-  background-color: black;
+  /*background-color: black;*/
   border: medium solid yellow;
   overflow: inherit;
   width: 100%;
 }
 
 .details {
-  background-color: cyan;
+  /*background-color: cyan;*/
   border: medium solid gold;
-  overflow: scroll;
+  /*overflow: auto;*/
   /*width: 100%;*/
 }
