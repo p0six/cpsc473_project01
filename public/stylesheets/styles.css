@@ -3,54 +3,38 @@ html, body {
   width: 100%;
 }
 
-.container {
+body {
   /* a "%" is the percentage with respect to the elements parent. "*/
-  background-color: white;
-  border-color: purple;
-  border-style: solid; /* default style is 'none' */
-  border-width: medium;
-  padding: 0;
-  width: 100%;
+  /*background-color: black;*/
+  border: medium solid purple;
+  box-sizing: border-box;
+  margin: 1px auto;
   overflow: auto;
-  text-align: center;
+  width: 100%;
+  /*text-align: center;*/
 }
 
 .toolbar {
-  /*background-color: blue;*/
-  border-color: cyan;
-  border-style: solid;
-  border-width: medium;
-  /*height: 10%;*/
-  overflow: inherit;
+  background-color: blue; /* This is effectively meaningless... Nav brings on its own color */
+  border: medium solid cyan;
+  box-sizing: border-box;
+  overflow: visible; /* This is a default value, but specified here purposefully in order for dropdowns to function */
+  width: 100%;
 }
 
 .header {
+  box-sizing: border-box;
   background-color: black;
-  border-color: yellow;
-  border-style: solid;
-  border-width: medium;
-  /*height: 40%;*/
+  border: medium solid yellow;
+  width: 100%;
   overflow: inherit;
 }
 
 .details {
+  box-sizing: border-box;
   background-color: cyan;
-  border-color: gold;
-  border-style: solid;
-  border-width: medium;
-  height: 50%;
+  border: medium solid gold;
+  /*height: 50%;*/
+  width: 100%;
   overflow: scroll;
-}
-
-.carousel_class {
-  margin: 0 auto;
-  width: 90%;
-}
-
-.slick_slide {
-  width: 250px;
-}
-
-.slick-arrow {
-  /*background-color: grey;*/
 }
