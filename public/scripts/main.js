@@ -8,6 +8,11 @@ $(document).ready(function() {
     variableWidth: true,
     centerMode: true
   });
+  var calendar = $("#calendar").calendar({
+    tmpl_path: "/tmpls/",
+    events_source: function () { return []; }
+  });
+
 });
 
 $(window).on("load", function() {

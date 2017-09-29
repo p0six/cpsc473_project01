@@ -1,30 +1,33 @@
 html, body {
-  height: 100%;
-  width: 100%;
   box-sizing: border-box; /* this property prevents overlapping borders */
 }
 
+html, body, .toolbar, .header, .details {
+  width: 100%;
+}
+
 body {
-  /* a "%" is the percentage with respect to the elements parent. "*/
-  border: medium solid purple;
+  border: medium solid red;
   overflow: auto; /* if text extends beyond window, a scrollbar is added */
 }
 
 .toolbar, .header, .details {
-  width: 100%;
+  border-width: medium;
+  border-style: solid;
 }
 
 .toolbar {
-  border: medium solid cyan;
+  border-color: maroon;
   overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
 }
 
 .header {
-  border: medium solid yellow;
+  border-color: green;
+  overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
   overflow: inherit; /* body set to auto, so auto */
 }
 
 .details {
-  border: medium solid gold;
+  border-color: blue;
   overflow: inherit; /* this may need to change to 'visible' if we keep a dropdown here.. */
 }
