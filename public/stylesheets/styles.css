@@ -1,40 +1,33 @@
 html, body {
   height: 100%;
   width: 100%;
+  box-sizing: border-box; /* this property prevents overlapping borders */
 }
 
 body {
   /* a "%" is the percentage with respect to the elements parent. "*/
-  /*background-color: black;*/
+  background-color: green;
   border: medium solid purple;
-  box-sizing: border-box;
-  margin: 1px auto;
-  overflow: auto;
-  width: 100%;
-  /*text-align: center;*/
+  overflow: auto; /* if text extends beyond window, a scrollbar is added */
 }
 
 .toolbar {
   background-color: blue; /* This is effectively meaningless... Nav brings on its own color */
   border: medium solid cyan;
-  box-sizing: border-box;
-  overflow: visible; /* This is a default value, but specified here purposefully in order for dropdowns to function */
+  overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
   width: 100%;
 }
 
 .header {
-  box-sizing: border-box;
   background-color: black;
   border: medium solid yellow;
-  width: 100%;
   overflow: inherit;
+  width: 100%;
 }
 
 .details {
-  box-sizing: border-box;
   background-color: cyan;
   border: medium solid gold;
-  /*height: 50%;*/
-  width: 100%;
   overflow: scroll;
+  /*width: 100%;*/
 }

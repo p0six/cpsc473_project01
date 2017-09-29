@@ -1,0 +1,12 @@
+.carousel_class {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.slick_slide {
+  width: 250px;
+}
+
+.slick-arrow { /* this is how we style the arrow on the carousel */
+  /*background-color: grey;*/
+}
