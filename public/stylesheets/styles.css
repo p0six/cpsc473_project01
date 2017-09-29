@@ -16,20 +16,20 @@ html, body {
 }
 
 .toolbar {
-  background-color: blue;
+  /*background-color: blue;*/
   border-color: cyan;
   border-style: solid;
   border-width: medium;
-  height: 10%;
+  /*height: 10%;*/
   overflow: inherit;
 }
 
 .header {
-  background-color: green;
+  background-color: black;
   border-color: yellow;
   border-style: solid;
   border-width: medium;
-  height: 40%;
+  /*height: 40%;*/
   overflow: inherit;
 }
 
@@ -43,10 +43,14 @@ html, body {
 }
 
 .carousel_class {
+  margin: 0 auto;
   width: 90%;
-  margin: 0px auto;
 }
 
 .slick_slide {
   width: 250px;
+}
+
+.slick-arrow {
+  /*background-color: grey;*/
 }
