@@ -4,9 +4,9 @@
 }
 
 .slick_slide {
-  width: 250px;
+  width: 250px; /* this sets the width of our image to a static value... means variable height..  */
 }
 
-.slick-arrow { /* this is how we style the arrow on the carousel */
-  /*background-color: grey;*/
+.slick-prev:before, .slick-next:before {
+  color: grey;
 }
