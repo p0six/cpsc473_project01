@@ -1,0 +1,33 @@
+html, body {
+  box-sizing: border-box; /* this property prevents overlapping borders */
+}
+
+html, body, .toolbar, .header, .details {
+  width: 100%;
+}
+
+body {
+  border: medium solid red;
+  overflow: auto; /* if text extends beyond window, a scrollbar is added */
+}
+
+.toolbar, .header, .details {
+  border-width: medium;
+  border-style: solid;
+}
+
+.toolbar {
+  border-color: maroon;
+  overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
+}
+
+.header {
+  border-color: green;
+  overflow: visible; /* default value, but specified here purposefully as dropdowns fail without this property */
+  overflow: inherit; /* body set to auto, so auto */
+}
+
+.details {
+  border-color: blue;
+  overflow: inherit; /* this may need to change to 'visible' if we keep a dropdown here.. */
+}

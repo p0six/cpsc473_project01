@@ -1,0 +1,11 @@
+{
+  "success": 1,
+  "result": [{
+    "id": 1,
+    "title": "Event 1",
+    "url": "http://awwsheezy.com",
+    "class": "event-important",
+    "start": 1506728134476,
+    "end": 1506728164476
+  }]
+}

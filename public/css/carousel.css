@@ -1,0 +1,12 @@
+.carousel_class {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.slick_slide {
+  width: 250px; /* this sets the width of our image to a static value... means variable height..  */
+}
+
+.slick-prev:before, .slick-next:before {
+  color: grey;
+}
