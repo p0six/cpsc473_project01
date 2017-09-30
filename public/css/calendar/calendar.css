@@ -392,14 +392,16 @@
   background-color: #fafafa;
 }
 .cal-month-day {
-  height: 100px;
+  /*height: 100px;*/
+  height: 50px;
 }
 [class*="cal-cell"]:hover {
   background-color: #ededed;
 }
 .cal-year-box [class*="span"],
 .cal-month-box [class*="cal-cell"] {
-  min-height: 100px;
+  /*min-height: 100px;*/
+  min-height: 50px;
   border-right: 1px solid #e1e1e1;
   position: relative;
 }
@@ -456,7 +458,9 @@ span[data-cal-date]:hover {
   color: darkgreen;
 }
 .cal-month-box .cal-day-today span[data-cal-date] {
-  font-size: 1.9em;
+  /*font-size: 1.9em;*/
+  font-size: 1.4em;
+  overflow: hidden;
 }
 .cal-day-holiday span[data-cal-date] {
   color: #800080;
@@ -500,7 +504,7 @@ span[data-cal-date]:hover {
   line-height: 22px;
 }
 .events-list {
-  max-height: 47px;
+  /*max-height: 47px;*/
   padding-left: 5px;
 }
 .cal-column {
