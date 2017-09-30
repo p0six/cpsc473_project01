@@ -2,11 +2,17 @@
   "success": 1,
   "result": [{
     "id": 1,
-    "title": "The Dopest Event Ever",
-    "url": "http://awwsheezy.com",
-    "class": "event-important",
-		"comment": "event-important, event-success, event-warning, event-info, event-inverse and event-special",
     "start": 1506733200000,
-    "end": 1506747600000
+    "end": 1506747600000,
+    "title": "The Dopest Event Ever",
+		"description": "This event is supposed to be pretty fun, or whatever.  You should go, fosho.",
+    "streetAddress": "2600 S. Price Rd.",
+    "city": "Fullerton",
+    "statePrefix": "CA",
+    "zip": "92831",
+    "url": "http://awwsheezy.com",
+    "eventImage": {},
+    "tags": ["18+","#HappyHour","#DrinkSpecials"],
+    "class": "event-important"
   }]
 }
