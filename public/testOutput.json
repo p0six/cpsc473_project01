@@ -2,10 +2,11 @@
   "success": 1,
   "result": [{
     "id": 1,
-    "title": "Event 1",
+    "title": "The Dopest Event Ever",
     "url": "http://awwsheezy.com",
     "class": "event-important",
-    "start": 1506728134476,
-    "end": 1506728164476
+		"comment": "event-important, event-success, event-warning, event-info, event-inverse and event-special",
+    "start": 1506733200000,
+    "end": 1506747600000
   }]
 }
