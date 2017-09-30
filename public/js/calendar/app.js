@@ -17,9 +17,9 @@
       list.html('');
 
       $.each(events, function(key, val) {
-        var now = new Date(val.start);
+        var eventTime = new Date(val.start);
         $(document.createElement('li'))
-          .html('<a href="' + val.url + '">' + val.title + ' - ' + now.toLocaleString() + '</a>')
+          .html('<a href="' + val.url + '">' + val.title + ' - ' + eventTime.toLocaleString() + '</a>')
           .appendTo(list);
       });
     },
