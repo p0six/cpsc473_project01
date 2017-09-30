@@ -3,9 +3,29 @@
     "node": ">= 4.0"
   },
   "dependencies": {
+    "asyncawait": "^1.0.6",
     "deployd": "^1.0.0",
     "dpd-clientlib": "^0.0.1",
     "dpd-dashboard": "^0.0.1",
     "dpd-fileupload": "0.0.17"
-  }
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest --coverage --forceExit"
+  },
+  "name": "event_friend_finder",
+  "description": "Project 01 for CPSC 473",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/p0six/cpsc473_project01.git"
+  },
+  "author": "Michael, Daniel, David, Christine, Alex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p0six/cpsc473_project01/issues"
+  },
+  "homepage": "https://github.com/p0six/cpsc473_project01#readme"
 }
