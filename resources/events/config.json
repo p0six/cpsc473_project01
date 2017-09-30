@@ -9,45 +9,77 @@
 			"id": "ownerId",
 			"order": 0
 		},
-		"eventDate": {
-			"name": "eventDate",
+		"start": {
+			"name": "start",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "eventDate",
+			"id": "start",
 			"order": 1
 		},
-		"eventTime": {
-			"name": "eventTime",
+		"end": {
+			"name": "end",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "eventTime",
+			"id": "end",
 			"order": 2
 		},
-		"eventDuration": {
-			"name": "eventDuration",
+		"title": {
+			"name": "title",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "eventDuration",
+			"id": "title",
 			"order": 3
 		},
-		"eventDescription": {
-			"name": "eventDescription",
+		"description": {
+			"name": "description",
 			"type": "string",
 			"typeLabel": "string",
 			"required": true,
-			"id": "eventDescription",
+			"id": "description",
 			"order": 4
 		},
-		"eventTags": {
-			"name": "eventTags",
-			"type": "array",
-			"typeLabel": "array",
+		"streetAddress": {
+			"name": "streetAddress",
+			"type": "string",
+			"typeLabel": "string",
 			"required": true,
-			"id": "eventTags",
+			"id": "streetAddress",
 			"order": 5
+		},
+		"city": {
+			"name": "city",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "city",
+			"order": 6
+		},
+		"statePrefix": {
+			"name": "statePrefix",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "statePrefix",
+			"order": 7
+		},
+		"zip": {
+			"name": "zip",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "zip",
+			"order": 8
+		},
+		"url": {
+			"name": "url",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "url",
+			"order": 9
 		},
 		"eventImage": {
 			"name": "eventImage",
@@ -55,23 +87,15 @@
 			"typeLabel": "object",
 			"required": false,
 			"id": "eventImage",
-			"order": 6
+			"order": 10
 		},
-		"eventStreetAddress": {
-			"name": "eventStreetAddress",
-			"type": "string",
-			"typeLabel": "string",
-			"required": true,
-			"id": "eventStreetAddress",
-			"order": 7
-		},
-		"eventCity": {
-			"name": "eventCity",
-			"type": "string",
-			"typeLabel": "string",
-			"required": true,
-			"id": "eventCity",
-			"order": 8
+		"tags": {
+			"name": "tags",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "tags",
+			"order": 11
 		}
 	}
 }
