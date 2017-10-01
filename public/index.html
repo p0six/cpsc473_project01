@@ -48,8 +48,11 @@
             </div>
           </li>
         </ul>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">
           Sign-In
+        </button>
+        <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
+          Logout
         </button>
         <!--
         <form class="form-inline my-2 my-lg-0">
@@ -121,36 +124,79 @@
           </div>
         </div>
         <!-- BEGIN: Calendar Crap -->
-      </div> <!-- end of 'home' tab -->
+      </div>
+      <!-- end of 'home' tab -->
       <div class="tab-pane" id="profile" role="tabpanel">Pane 1</div>
       <div class="tab-pane" id="messages" role="tabpanel">Second Pane</div>
       <div class="tab-pane" id="settings" role="tabpanel">3rd PANE MANG!!</div>
     </div>
     <!-- END: Tab panes -->
   </div>
-  <!-- BEGIN: Bootstrap Login Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <!-- BEGIN # MODAL LOGIN -->
+  <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Sign-In</h5>
+        <div class="modal-header" align="center">
+          <h5 class="modal-title" id="loginModalLabel">Sign-In</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  						<span aria-hidden="true">&times;</span>
+  					</button>
         </div>
-        <div class="modal-body">
-          This is our modal body..
+        <!-- Begin # DIV Form -->
+        <div id="div-forms">
+          <!-- Begin # Login Form -->
+          <form id="login-form">
+            <div class="modal-body">
+              <div id="div-login-msg">
+                <span id="text-login-msg">Enter your Username and Password:</span>
+              </div>
+              <label><b>Username</b></label>
+              <input id="login_username" class="form-control" type="text" placeholder="Enter Username" required>
+              <label><b>Password</b></label>
+              <input id="login_password" class="form-control" type="password" placeholder="Enter Password" required>
+            </div>
+            <div class="modal-footer">
+              <div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+              </div>
+              <div>
+                <button id="login_register_btn" type="button" class="btn btn-link">Register</button>
+              </div>
+            </div>
+          </form>
+          <!-- End # Login Form -->
+          <!-- Begin | Register Form -->
+          <form id="register-form" style="display:none;">
+            <div class="modal-body">
+              <div id="div-register-msg">
+                <span id="text-register-msg">Register an account.</span>
+              </div>
+              <label><b>First Name</b></label>
+              <input id="register_fname" class="form-control" type="text" placeholder="Enter First Name" required>
+              <label><b>Last Name</b></label>
+              <input id="register_lname" class="form-control" type="text" placeholder="Enter Last Name" required>
+              <label><b>Username</b></label>
+              <input id="register_username" class="form-control" type="text" placeholder="Enter Username" required>
+              <label><b>Password</b></label>
+              <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+            </div>
+            <div class="modal-footer">
+              <div>
+                <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>
+              </div>
+              <div>
+                <button id="register_login_btn" type="button" class="btn btn-link">Log In</button>
+              </div>
+            </div>
+          </form>
+          <!-- End | Register Form -->
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        <!-- End # DIV Form -->
       </div>
     </div>
   </div>
-  <!-- END: Bootstrap Login Modal -->
+  <!-- END # MODAL LOGIN -->
   <!-- BEGIN: Calendar Modal -->
-
   <div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
@@ -170,7 +216,6 @@
       </div>
     </div>
   </div>
-
   <!-- END: Calendar Modal -->
   <!-- BEGIN: deployd object import -->
   <script type="text/javascript" src="/dpd.js"></script>
@@ -190,6 +235,6 @@
   <script type="text/javascript" src="/slick/slick.min.js"></script>
   <!-- END: jQuery Slick Carousel -->
   <script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="/js/loginhandler.js"></script>
 </body>
-
 </html>
