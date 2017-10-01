@@ -1,7 +1,7 @@
 {
-  "name": "event_friend_finder",
+  "name": "event-friend-finder",
   "version": "1.0.0",
-  "description": "",
+  "description": "CPSC 473 - Project 01. Event Friend Finder.",
   "main": "index.js",
   "dependencies": {
     "deployd": "^1.0.0",
@@ -11,9 +11,12 @@
     "dpd-fileupload": "^0.0.17"
   },
   "devDependencies": {},
+  "engines": {
+    "node": ">=6.9.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "/opt/nodejs/8.1.0/bin/node index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
