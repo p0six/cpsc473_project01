@@ -1100,7 +1100,6 @@ if (!String.prototype.formatNum) {
         ifrm.attr('src', url);
         $('.modal-body', modal).html(ifrm);
         // BEGIN: iFrame Interception - Calendar was overwriting my changes... no longer
-        alert('iframe selected');
         var eventTime = new Date($(this).data('event-start'));
         $('#eventModalBody').html($(this).data('event-description'));
         $('#eventModalTitle').html(this.title + ' - ' + eventTime.toLocaleString());
