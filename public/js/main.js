@@ -12,7 +12,12 @@ $(document).ready(function() {
 
   $('.event').click(function() {
     var eventTime = new Date($(this).data('event-start'));
-    $('#eventModalBody').html($(this).data('event-description'));
-    $('#eventModalTitle').html(this.title + ' - ' + eventTime.toLocaleString());
+    document.getElementById("placehere").appendChild(elem);
+    //add divs and shit to populate the modal
+    //$('.modalHeader').html($(this).data('event-title'));
+    //$('#eventModalBody').html($(this).data('event-description'));
+    //document.getElementById("eventModalTitle").innerHTML = "Public Offers";
+    //$('#eventModalBody').html($(this).data('event-description'));
+    //$('#eventModalLocation').html($(this).data('event-streetAddress'));
   });
 });

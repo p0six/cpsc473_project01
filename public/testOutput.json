@@ -2,8 +2,8 @@
   "success": 1,
   "result": [{
     "id": 1,
-    "start": 1506733200000,
-    "end": 1506747600000,
+    "start": 1506847600000,
+    "end": 1506947600000,
     "title": "The Dopest Event Ever",
 		"description": "This event is supposed to be pretty fun, or whatever.  You should go, fosho.",
     "streetAddress": "2600 S. Price Rd.",
