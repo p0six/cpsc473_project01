@@ -48,7 +48,7 @@
             </div>
           </li>
         </ul>
-        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">
+        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
           Sign-In
         </button>
         <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
@@ -148,7 +148,8 @@
           <form id="login-form">
             <div class="modal-body">
               <div id="div-login-msg">
-                <span id="text-login-msg">Enter your Username and Password:</span>
+                <label id="text-login-msg">Enter your Username and Password:</label>
+                <label id="login-fail-msg" style="color: red;"></label>
               </div>
               <label><b>Username</b></label>
               <input id="login_username" class="form-control" type="text" placeholder="Enter Username" required>
@@ -169,7 +170,8 @@
           <form id="register-form" style="display:none;">
             <div class="modal-body">
               <div id="div-register-msg">
-                <span id="text-register-msg">Register an account.</span>
+                <label id="text-register-msg">Register an account.</label>
+                <label id="register-fail-msg" style="color: red;"></label>
               </div>
               <label><b>First Name</b></label>
               <input id="register_fname" class="form-control" type="text" placeholder="Enter First Name" required>
@@ -235,6 +237,8 @@
   <script type="text/javascript" src="/slick/slick.min.js"></script>
   <!-- END: jQuery Slick Carousel -->
   <script type="text/javascript" src="/js/main.js"></script>
+  <script type="text/javascript" src="/js/onload.js"></script>
   <script type="text/javascript" src="/js/loginhandler.js"></script>
 </body>
+
 </html>
