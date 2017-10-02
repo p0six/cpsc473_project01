@@ -1099,6 +1099,12 @@ if (!String.prototype.formatNum) {
       if (self.options.modal_type == 'iframe') {
         ifrm.attr('src', url);
         $('.modal-body', modal).html(ifrm);
+        // BEGIN: iFrame Interception - Calendar was overwriting my changes... no longer
+        alert('iframe selected');
+        var eventTime = new Date($(this).data('event-start'));
+        $('#eventModalBody').html($(this).data('event-description'));
+        $('#eventModalTitle').html(this.title + ' - ' + eventTime.toLocaleString());
+        // END: iFrame Interception - Calendar was overwriting my changes... no longer
       }
 
       if (!modal.data('handled.bootstrap-calendar') || (modal.data('handled.bootstrap-calendar') && modal.data('handled.event-id') != event.id)) {

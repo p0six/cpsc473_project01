@@ -65,35 +65,8 @@
     calendar.view();
   });
 
-  $('#events-in-modal').change(function() {
-    var val = $(this).is(':checked') ? $(this).val() : null;
-    calendar.setOptions({
-      modal: val
-    });
-  });
-  $('#format-12-hours').change(function() {
-    var val = $(this).is(':checked') ? true : false;
-    calendar.setOptions({
-      format12: val
-    });
-    calendar.view();
-  });
-  $('#show_wbn').change(function() {
-    var val = $(this).is(':checked') ? true : false;
-    calendar.setOptions({
-      display_week_numbers: val
-    });
-    calendar.view();
-  });
-  $('#show_wb').change(function() {
-    var val = $(this).is(':checked') ? true : false;
-    calendar.setOptions({
-      weekbox: val
-    });
-    calendar.view();
-  });
-  $('#eventModal .modal-header, #eventModal .modal-footer').click(function(e) {
+  //$('#eventModal .modal-header, #eventModal .modal-footer').click(function(e) {
     //e.preventDefault();
     //e.stopPropagation();
-  });
+  //});
 }(jQuery));

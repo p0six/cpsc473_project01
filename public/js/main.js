@@ -1,6 +1,18 @@
 $(document).ready(function() {
-  var myHook = this;
   console.log('document loaded');
+
+  // Login Buttons
+  dpd.users.me(function(user) {
+    if (user) {
+      $('#signInButton').hide();
+      $('#logOutButton').show();
+    } else {
+      $('#signInButton').show();
+      $('#logOutButton').hide();
+    }
+  });
+
+  // Carousel
   $('.carousel_class').slick({
     dots: false,
     infinite: true,
@@ -8,11 +20,5 @@ $(document).ready(function() {
     slidesToShow: 1,
     variableWidth: true,
     centerMode: true
-  });
-
-  $('.event').click(function() {
-    var eventTime = new Date($(this).data('event-start'));
-    $('#eventModalBody').html($(this).data('event-description'));
-    $('#eventModalTitle').html(this.title + ' - ' + eventTime.toLocaleString());
   });
 });
