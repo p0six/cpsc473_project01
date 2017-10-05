@@ -12,7 +12,6 @@ $(document).ready(function() {
 
   $('.event').click(function() {
     var eventTime = new Date($(this).data('event-start'));
-    document.getElementById("placehere").appendChild(elem);
     //add divs and shit to populate the modal
     //$('.modalHeader').html($(this).data('event-title'));
     //$('#eventModalBody').html($(this).data('event-description'));
