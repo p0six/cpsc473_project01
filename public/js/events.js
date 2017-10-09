@@ -1,6 +1,5 @@
 $('#submitEvent').click(function(){
       //e.preventDefault();
-      alert("button was clicked");
       var $rg_owner = "1";
       var $rg_title = $('#event_title').val();
       var $rg_description = $('#event_description').val();
