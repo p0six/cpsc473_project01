@@ -48,10 +48,11 @@
             </div>
           </li>
         </ul>
+		</ul>
 		   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
-        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal">
+        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
           Sign-In
         </button>
         <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
@@ -102,7 +103,7 @@
         <!-- BEGIN: Calendar Crap -->
         <div class="container-fluid" style="width:90%;">
           <div style="display:flex;">
-            <div class="container" style="">
+            <div id="calendarContainer" class="container">
               <div style="text-align:center;">
                 <div class="btn-group btn-group-sm">
                   <button class="btn btn-outline-primary" data-calendar-nav="prev">Prev</button>
@@ -201,8 +202,8 @@
     </div>
   </div>
   <!-- END # MODAL LOGIN -->
-
-<!-- BEGIN EVENT MODAL -->
+  
+  <!-- BEGIN EVENT MODAL -->
   <div class="modal fade modal-xl" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -245,7 +246,7 @@
     </div>
   </div>
   <!-- End Event Modal -->
-
+  
   <!-- BEGIN: Calendar Modal -->
   <div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -285,7 +286,6 @@
   <script type="text/javascript" src="/slick/slick.min.js"></script>
   <!-- END: jQuery Slick Carousel -->
   <script type="text/javascript" src="/js/main.js"></script>
-  <script type="text/javascript" src="/js/onload.js"></script>
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
 </body>
