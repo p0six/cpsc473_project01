@@ -1,0 +1,16 @@
+<% 	event.date_start = new Date(parseInt(event.start));
+	event.date_end = new Date(parseInt(event.end)); %>
+
+<div class="event-details" id="eventInfo">
+	<img src="https://marketplace.canva.com/MAB1BpjSUAM/2/0/thumbnail_large/canva-bike-themed-event-flyer-MAB1BpjSUAM.jpg" id="modalPicture">
+	<div id="event-information">
+		<span class="centerDetails">Location: <%= event.streetAddress %>, <%= event.city %>, <%= event.statePrefix %> <%= event.zip %></span><br /><br/>
+		<span class="centerDetails">Start Date: <%= event.date_start.getDate() %> <%= calendar.locale["m" + event.date_start.getMonth()] %> <%= event.date_start.getFullYear() %>, at <%= event.date_start.getHours() %>:<%= event.date_start.getMinutes() %></span><br /><br/>
+	  <span class="centerDetails">End Date: <%= event.date_end.getDate() %> <%= calendar.locale["m" + event.date_end.getMonth()] %> <%= event.date_end.getFullYear() %> at <%= event.date_end.getHours() %>:<%= event.date_end.getMinutes() %></span><br /><br/>
+		<span class="centerDetails">Description:  <%= event.description %></span><br/><br/>
+		<div style = "margin: 0px 20px">
+		    <a href = "<%= event.url %>" class = "btn btn-primary"><i class = "icon-calendar"></i> More info</a>
+		</div>
+	</div>
+
+</div>
