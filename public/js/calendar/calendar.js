@@ -985,19 +985,19 @@ if (!String.prototype.formatNum) {
               headers: self.options.headers,
               // END: THIS IS WHERE WE MAKE OUR JSON REQUEST
             }).done(function(json) {
-              // BEGIN: THIS IS WHAT IS LOOKING FOR SUCCESS...
+              //BEGIN: THIS IS WHAT IS LOOKING FOR SUCCESS...
               //if (!json.success) {
-                //$.error(json.error);
+              //  $.error(json.error);
               //}
-              // END: THIS IS WHAT IS LOOKING FOR SUCCESS...
-              // BEGIN: THIS IS WHAT IS SETTING US OFF ON ".result"
+              //END: THIS IS WHAT IS LOOKING FOR SUCCESS...
+              //BEGIN: THIS IS WHAT IS SETTING US OFF ON ".result"
               //if (json.result) {
-                //events = json.result;
+              //  events = json.result;
               //}
-              // END: THIS IS WHAT IS SETTING US OFF ON ".result"
-              // BEGIN: MODIFIED BYOCH
+              //END: THIS IS WHAT IS SETTING US OFF ON ".result"
+              //BEGIN: MODIFIED BYOCH
               events = json;
-              // END: MODIFIED BYOCH
+              //END: MODIFIED BYOCH
             });
             return events;
           };
@@ -1096,7 +1096,7 @@ if (!String.prototype.formatNum) {
     }
 
     if (self.options.modal_type == 'template')
-      $(document.createElement('div'))
+      $(document.createElement('div'));
 
     $('a[data-event-id]', this.context).on('click', function(event) {
       event.preventDefault();
@@ -1105,7 +1105,7 @@ if (!String.prototype.formatNum) {
       var url = $(this).attr('href');
       var id = $(this).data('event-id');
       event = _.find(self.options.events, function(event) {
-        return event.id == id
+        return event.id == id;
       });
 
       if (self.options.modal_type == 'iframe') {
@@ -1132,7 +1132,9 @@ if (!String.prototype.formatNum) {
 
               case 'ajax':
                 $.ajax({
+                  // BEGIN: TODO LOOK AT THIS LATER - WE CAN USE THE 'URL' field to load a specific AJAX query for a known event id!
                   url: url,
+                  // END: TODO LOOK AT THIS LATER
                   dataType: 'html',
                   async: false,
                   success: function(data) {
