@@ -977,18 +977,27 @@ if (!String.prototype.formatNum) {
               params.browser_timezone = browser_timezone;
             }
             $.ajax({
+              // BEGIN: THIS IS WHERE WE MAKE OUR JSON REQUESET
               url: buildEventsUrl(source, params),
               dataType: 'json',
               type: 'GET',
               async: false,
               headers: self.options.headers,
+              // END: THIS IS WHERE WE MAKE OUR JSON REQUEST
             }).done(function(json) {
-              if (!json.success) {
-                $.error(json.error);
-              }
-              if (json.result) {
-                events = json.result;
-              }
+              // BEGIN: THIS IS WHAT IS LOOKING FOR SUCCESS...
+              //if (!json.success) {
+                //$.error(json.error);
+              //}
+              // END: THIS IS WHAT IS LOOKING FOR SUCCESS...
+              // BEGIN: THIS IS WHAT IS SETTING US OFF ON ".result"
+              //if (json.result) {
+                //events = json.result;
+              //}
+              // END: THIS IS WHAT IS SETTING US OFF ON ".result"
+              // BEGIN: MODIFIED BYOCH
+              events = json;
+              // END: MODIFIED BYOCH
             });
             return events;
           };
@@ -1086,7 +1095,7 @@ if (!String.prototype.formatNum) {
         });
     }
 
-    if (self.options.modal_type =='template')
+    if (self.options.modal_type == 'template')
       $(document.createElement('div'))
 
     $('a[data-event-id]', this.context).on('click', function(event) {

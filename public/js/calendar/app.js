@@ -4,7 +4,7 @@
 
   var options = {
     //events_source: 'events.json.php',
-    events_source: 'testOutput.json',
+    events_source: '/events',
     view: 'month',
     modal: '#eventModal',
     tmpl_path: 'tmpls/',
