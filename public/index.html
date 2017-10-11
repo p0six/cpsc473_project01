@@ -48,7 +48,7 @@
             </div>
           </li>
         </ul>
-		    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-modal">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
         <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
@@ -70,7 +70,7 @@
   </div>
   <div class="header">
     <!-- BEGIN: jQuery Slick Carousel -->
-    <div class="carousel_class">
+    <div id="carousel" class="carousel_class">
       <div><img class="slick_slide" src="/img/otter1.jpg"></div>
       <div><img class="slick_slide" src="/img/otter2.jpg"></div>
       <div><img class="slick_slide" src="/img/otter3.jpg"></div>
@@ -100,7 +100,7 @@
     <div class="tab-content">
       <div class="tab-pane active" id="home" role="tabpanel">
         <!-- BEGIN: Calendar Crap -->
-        <div class="container-fluid" style="width:90%;">
+        <div class="container-fluid">
           <div style="display:flex;">
             <div id="calendarContainer" class="container">
               <div style="text-align:center;">
@@ -143,7 +143,7 @@
           <h5 class="modal-title" id="loginModalLabel">Sign-In</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
   						<span aria-hidden="true">&times;</span>
-  					</button>
+  				</button>
         </div>
         <!-- Begin # DIV Form -->
         <div id="div-forms">
@@ -200,7 +200,7 @@
       </div>
     </div>
   </div>
-  <!-- END # MODAL LOGIN --> 
+  <!-- END # MODAL LOGIN -->
   <!-- BEGIN EVENT MODAL -->
   <div class="modal fade modal-xl" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -209,7 +209,7 @@
           <h5 class="modal-title" id="eventModalLabel">Create Event</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     						<span aria-hidden="true">&times;</span>
-    					</button>
+    			</button>
         </div>
         <div id="event-div-form">
           <!-- Begin Event Form -->
@@ -239,9 +239,6 @@
             </div>
           </form>
           <!-- End Event Form -->
-          </form>
-          <!-- End | Register Form -->
-
         </div>
         <!-- End # DIV Form -->
       </div>
@@ -258,13 +255,13 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <div id="eventModalBody" class="modal-body" style="height: 400px">
+        <div id="eventModalBody" class="modal-body"></div>
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+        <!-- THIS BUTTON MAKES NO SENSE FOR NOW -->
+        <!-- <div class="modal-footer">
+            <button type="button" id="saveChanges" class="btn btn-primary">Save changes</button>
+        </div>-->
+        <!-- THIS BUTTON MAKES NO SENSE FOR NOW-->
       </div>
     </div>
   </div>
@@ -290,4 +287,5 @@
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
 </body>
+
 </html>
