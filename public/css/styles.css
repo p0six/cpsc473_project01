@@ -14,6 +14,15 @@ body {
   overflow: visible;  /* default value, but specified here purposefully as dropdowns fail without this property */
 }
 
+/*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and whatever may be necessary*/
+#event-modal-content {
+  width: 700px;
+}
+
+#event-form {
+  width: 400px;
+}
+
 #eventModalTitle {
   border: none;
 }
