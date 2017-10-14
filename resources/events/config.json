@@ -83,8 +83,8 @@
 		},
 		"eventImage": {
 			"name": "eventImage",
-			"type": "object",
-			"typeLabel": "object",
+			"type": "string",
+			"typeLabel": "string",
 			"required": false,
 			"id": "eventImage",
 			"order": 10
