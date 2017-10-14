@@ -13,6 +13,23 @@ $(document).ready(function() {
       $('#signInButton').show();
       $('#logOutButton').hide();
     }
+
+    function derp() {
+      $('.carousel_class').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        variableWidth: true,
+        /*swipe: true,
+        swipeToSlide: true,
+        touchMove: true,*/
+        centerMode: true
+      });
+    }
+    window.derp = derp;
+    derp();
+
   });
   // Carousel initialization moved into 'app.js' in Calendar's onAfterEventsLoad function..
 });

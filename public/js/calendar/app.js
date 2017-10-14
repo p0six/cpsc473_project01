@@ -45,18 +45,10 @@
       });
 
       // Initialize our Carousel
-      $('.carousel_class').slick({
-        dots: false,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        variableWidth: true,
-        /*swipe: true,
-        swipeToSlide: true,
-        touchMove: true,*/
-        centerMode: true
-      });
-      $('.carousel_class').slick('slickNext');
+      if (window.derp !== undefined) {
+        window.derp();
+        $('.carousel_class').slick('slickNext');
+      }
 
     },
     onAfterViewLoad: function(view) {
