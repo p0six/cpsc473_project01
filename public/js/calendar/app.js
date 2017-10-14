@@ -22,6 +22,15 @@
       var carousel = $('#carousel');
       carousel.html('');
 
+      if (events.length === 0) {
+        for (var i = 0; i < 8; i++) {
+          $(document.createElement('div'))
+            .html('<img class="slick_slide" src="upload/meme0' + (i + 1) + '.jpg">')
+            .appendTo(carousel);
+        }
+      }
+      $('#month').html('<h1 id="h1Month">' + this.getMonth() + ', ' + this.getYear() + '</h1>');
+
       $.each(events, function(key, val) {
         var eventTime = new Date(val.start);
         // This populates our Event list basd on current calendar selection.
@@ -42,8 +51,13 @@
         speed: 300,
         slidesToShow: 1,
         variableWidth: true,
+        swipe: true,
+        swipeToSlide: true,
+        touchMove: true,
         centerMode: true
       });
+      $('.carousel_class').slick('slickNext');
+      $('.carousel_class').slick('slickPlay');
 
     },
     onAfterViewLoad: function(view) {
@@ -59,6 +73,7 @@
   };
 
   var calendar = $('#calendar').calendar(options);
+  window.calendar = calendar;
 
   $('.btn-group button[data-calendar-nav]').each(function() {
     var $this = $(this);
@@ -83,10 +98,10 @@
     calendar.view();
   });*/
 
-  $('#language').change(function() {
+  /*$('#language').change(function() {
     calendar.setLanguage($(this).val());
     calendar.view();
-  });
+  });*/
 
   //$('#eventModal .modal-header, #eventModal .modal-footer').click(function(e) {
   //e.preventDefault();

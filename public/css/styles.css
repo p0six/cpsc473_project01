@@ -27,6 +27,11 @@ body {
   border: none;
 }
 
+#h1month, #month {
+  font-weight: bold;
+  text-align: center;
+}
+
 .event-details {
   display: flex;
   flex-direction: row;
