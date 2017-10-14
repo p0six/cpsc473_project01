@@ -51,13 +51,12 @@
         speed: 300,
         slidesToShow: 1,
         variableWidth: true,
-        swipe: true,
+        /*swipe: true,
         swipeToSlide: true,
-        touchMove: true,
+        touchMove: true,*/
         centerMode: true
       });
       $('.carousel_class').slick('slickNext');
-      $('.carousel_class').slick('slickPlay');
 
     },
     onAfterViewLoad: function(view) {
