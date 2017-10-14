@@ -79,7 +79,10 @@
     <!-- BEGIN: Navigation tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+        <a class="nav-link" data-toggle="tab" href="#home" role="tab">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#friend" role="tab">Friend Events</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
@@ -127,7 +130,41 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
-      <div class="tab-pane" id="profile" role="tabpanel"></div>
+      <div class="tab-pane" id="friend" role="tabpanel">
+        <!-- BEGIN: Friend Calendar *********************************************************************-->
+        <div class="container-fluid">
+          <div style="display:flex;">
+            <div id="friendCalendarContainer" class="container">
+              <div style="text-align:center;">
+                <div class="btn-group btn-group-sm">
+                  <button class="btn btn-outline-primary" data-calendar-nav="prev">Prev</button>
+                  <button class="btn btn-outline-secondary" data-calendar-nav="today">Today</button>
+                  <button class="btn btn-outline-primary" data-calendar-nav="next">Next</button>
+                </div>
+                <div class="btn-group btn-group-sm">
+                  <button class="calenderType btn btn-outline-primary" data-calendar-view="year">Year</button>
+                  <button class="calenderType btn btn-outline-primary active" data-calendar-view="month">Month</button>
+                  <button class="calenderType btn btn-outline-primary" data-calendar-view="week">Week</button>
+                  <!--<button class="calenderType btn btn-outline-primary" data-calendar-view="day">Day</button>-->
+                </div>
+              </div>
+              <!--
+            <div id="friendCalendar"></div>
+          -->
+            </div>
+            <div class="container" style="text-align:center;">
+              <div>
+                <h1>Event List</h1>
+              </div>
+              <div id="friendEventlist"></div>
+            </div>
+          </div>
+        </div>
+        <!-- END: Event Calendar *******************************************************************************************************-->
+      </div>
+      <div class="tab-pane" id="profile" role="tabpanel">
+        <p id="fname">Initial Text</p>
+      </div>
       <div class="tab-pane" id="messages" role="tabpanel"></div>
       <div class="tab-pane" id="settings" role="tabpanel"></div>
     </div>
@@ -283,6 +320,8 @@
   <script type="text/javascript" src="/js/jstz/jstz.min.js"></script>
   <script type="text/javascript" src="/js/calendar/calendar.js"></script>
   <script type="text/javascript" src="/js/calendar/app.js"></script>
+  <!-- friend tab calendar -->
+  <script type="text/javascript" src="/js/calendar/friendCalendar.js"></script>
   <!-- END: bootstrap-calendar requirements -->
   <!-- START: bootstrap-datetimepicker -->
   <script type="text/javascript" src="/js/datetimepicker/bootstrap-datetimepicker.js"></script>
@@ -290,6 +329,8 @@
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
+
+  <script type="text/javascript" src="/js/profile.js"></script>
 
 </body>
 
