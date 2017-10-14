@@ -16,9 +16,9 @@
   <!-- END: bootstrap-calendar -->
   <link rel="stylesheet" href="/css/datetimepicker/bootstrap-datetimepicker.css">
 
-  <title>Event Friend Finder</title>
   <link rel="stylesheet" href="/css/carousel.css">
   <link rel="stylesheet" href="/css/styles.css">
+  <title>Event Friend Finder</title>
 </head>
 
 <body>
@@ -71,15 +71,9 @@
 
   </div>
   <div class="header">
-    <!-- BEGIN: jQuery Slick Carousel -->
-    <div id="carousel" class="carousel_class">
-      <div><img class="slick_slide" src="/img/otter1.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter2.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter3.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter4.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter5.jpg"></div>
-    </div>
-    <!-- END: jQuery Slick Carousel -->
+    <!-- BEGIN: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
+    <div id="carousel" class="carousel_class"></div>
+    <!-- END: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
   </div>
   <div class="details" style="margin-top: 10px;">
     <!-- BEGIN: Navigation tabs -->
@@ -261,7 +255,7 @@
         </div>
         <div id="eventModalBody" class="modal-body"></div>
         <div class="modal-footer">
-            <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
+          <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
         </div>
         <!-- THIS BUTTON MAKES NO SENSE FOR NOW -->
         <!-- <div class="modal-footer">
@@ -280,6 +274,9 @@
   <script type="text/javascript" src="/js/popper.min.js" integrity="" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
   <!-- END: Bootstrap 4 Latest compiled and minified JavaScript -->
+  <!-- BEGIN: jQuery Slick Carousel -->
+  <script type="text/javascript" src="/slick/slick.js"></script>
+  <!-- END: jQuery Slick Carousel -->
   <!-- BEGIN: bootstrap-calendar requirements, jstz added just in case -->
   <script type="text/javascript" src="/js/underscore-min.js"></script>
   <script type="text/javascript" src="/js/jstz/jstz.min.js"></script>
@@ -289,12 +286,9 @@
   <!-- START: bootstrap-datetimepicker -->
   <script type="text/javascript" src="/js/datetimepicker/bootstrap-datetimepicker.js"></script>
   <!-- END: bootstrap-datetimepicker -->
-  <!-- BEGIN: jQuery Slick Carousel -->
-  <script type="text/javascript" src="/slick/slick.min.js"></script>
-  <!-- END: jQuery Slick Carousel -->
-  <script type="text/javascript" src="/js/main.js"></script>
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
+  <script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 
