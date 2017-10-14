@@ -12,7 +12,6 @@ my_events_json = [
       "city":"Fullerton",
       "statePrefix":"CA",
       "zip":92831,
-      "url":"/events/2d52c40823048819",
       "eventImage":"upload/defaultEventImage.png"
    },
    {  
@@ -25,7 +24,6 @@ my_events_json = [
       "city":"Fullerton",
       "statePrefix":"CA",
       "zip":92832,
-      "url":"/events/83080067addd5b1b",
       "eventImage":"img/otter1.jpg"
    },
    {  
@@ -38,7 +36,6 @@ my_events_json = [
       "city":"Fullerton",
       "statePrefix":"CA",
       "zip":92831,
-      "url":"/events/a5d4524a96fc38d8",
       "eventImage":"img/otter2.jpg"
    },
    {  
@@ -51,7 +48,6 @@ my_events_json = [
       "city":"Fullerton",
       "statePrefix":"CA",
       "zip":92831,
-      "url":"/events/01656abec90d6972",
       "eventImage":"upload/defaultEventImage.png"
    },
    {  
@@ -64,7 +60,6 @@ my_events_json = [
       "city":"fullerton",
       "statePrefix":"ca",
       "zip":90703,
-      "url":"/events/57ba14ead0cf58da",
       "eventImage":"img/otter3.jpg"
    },
    {  
@@ -77,7 +72,6 @@ my_events_json = [
       "city":"norwalk",
       "statePrefix":"lkajsdf",
       "zip":9230,
-      "url":"/events/d68cd9f164a178e7",
       "eventImage":"upload/defaultEventImage.png"
    }
 ]
