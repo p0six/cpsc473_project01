@@ -20,11 +20,12 @@ $(document).ready(function() {
         infinite: true,
         speed: 300,
         slidesToShow: 1,
-        variableWidth: true,
+        variableWidth: true
+        //variableWidth: true,
         /*swipe: true,
         swipeToSlide: true,
         touchMove: true,*/
-        centerMode: true
+        //centerMode: true
       });
     }
     window.initCarousel = initCarousel;
