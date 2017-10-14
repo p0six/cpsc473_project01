@@ -12,3 +12,11 @@
 .slick-prev:before, .slick-next:before {
   color: grey;
 }
+
+slider {
+  display: none;
+}
+
+.slider.slick-initialized {
+  display: block;
+}
