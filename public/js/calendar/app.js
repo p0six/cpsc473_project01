@@ -29,7 +29,7 @@
             .appendTo(carousel);
         }
       }
-      $('#month').html('<h1 id="h1Month">' + this.getMonth() + ', ' + this.getYear() + '</h1>');
+      $('#month').html('<h2 id="h1Month">' + this.getMonth() + ', ' + this.getYear() + '</h2>');
 
       $.each(events, function(key, val) {
         var eventTime = new Date(val.start);
