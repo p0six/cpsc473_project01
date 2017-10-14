@@ -27,7 +27,7 @@ $(document).ready(function() {
         centerMode: true
       });
     }
-    window.derp = initCarousel;
+    window.initCarousel = initCarousel;
     initCarousel();
 
   });

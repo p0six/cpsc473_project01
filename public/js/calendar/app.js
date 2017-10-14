@@ -47,7 +47,7 @@
       // Initialize our Carousel
       if (window.initCarousel !== undefined) {
         window.initCarousel();
-        //$('.carousel_class').slick('slickNext');
+        $('.carousel_class').slick('slickNext');
       }
 
     },
