@@ -45,9 +45,9 @@
       });
 
       // Initialize our Carousel
-      if (window.derp !== undefined) {
-        window.derp();
-        $('.carousel_class').slick('slickNext');
+      if (window.initCarousel !== undefined) {
+        window.initCarousel();
+        //$('.carousel_class').slick('slickNext');
       }
 
     },

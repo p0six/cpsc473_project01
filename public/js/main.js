@@ -14,7 +14,7 @@ $(document).ready(function() {
       $('#logOutButton').hide();
     }
 
-    function derp() {
+    function initCarousel() {
       $('.carousel_class').slick({
         dots: false,
         infinite: true,
@@ -27,8 +27,8 @@ $(document).ready(function() {
         centerMode: true
       });
     }
-    window.derp = derp;
-    derp();
+    window.derp = initCarousel;
+    initCarousel();
 
   });
   // Carousel initialization moved into 'app.js' in Calendar's onAfterEventsLoad function..
