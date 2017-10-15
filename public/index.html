@@ -127,7 +127,23 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
-      <div class="tab-pane" id="profile" role="tabpanel"></div>
+      <div class="tab-pane" id="profile" role="tabpanel">
+        <div id="profile-container">
+          <image id="profileImage" src="data:image/png;base64,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" />
+        </div>
+        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+        <span>First Name: </span>
+        <span id="fName" class='my-profile' contenteditable="false">Insert First Name</span>
+      </br>
+        <span>Last Name: </span>
+        <span id="lName" class='my-profile' contenteditable="false">Insert Last Name</span>
+      </br>
+        <span>Phone Number: </span>
+        <span id="phoneNumber" class='my-profile' contenteditable="false">Insert Phone Number</span>
+      </br>
+        <button class='edit-button' onclick="Editable()">Edit</button>
+        <button class='ok-button' onclick="NotEditable()">OK</button>
+      </div>
       <div class="tab-pane" id="messages" role="tabpanel"></div>
       <div class="tab-pane" id="settings" role="tabpanel"></div>
     </div>
@@ -199,7 +215,7 @@
     </div>
   </div>
   <!-- END # MODAL LOGIN -->
-  
+
   <!-- BEGIN EVENT MODAL -->
   <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -293,7 +309,9 @@
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
-
+  <!-- BEGIN: Edit and Update Profile -->
+  <script type="text/javascript" src="/js/profile.js"></script>
+  <!-- BEGIN: Edit and Update Profile -->
 </body>
 
 </html>
