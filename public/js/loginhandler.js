@@ -1,6 +1,3 @@
-/* global $ */
-var dpd = window.dpd;
-
 //recieves and checks user data against dpd data
 //changes modal form and login - logout buttons
 $(function() {
