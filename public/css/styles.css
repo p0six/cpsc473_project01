@@ -8,6 +8,7 @@ html, body, input, label, .toolbar, .header, .details {
 
 body {
   overflow: auto;  /* if text extends beyond window, a scrollbar is added */
+  background-color: rgb(225,112,0);
 }
 
 .toolbar {
