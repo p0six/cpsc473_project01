@@ -41,10 +41,7 @@ function updateProfile() {
       console.log(user.username);
       console.log(user.lastName);
     } else {
-      console.log('FAIL test1');
-      console.log('FAIL test2');
-      console.log('update NO user');
-      console.log('FAIL test3');
+      alert("No user");
     }
   });
 }
