@@ -14,22 +14,10 @@ body {
   overflow: visible;  /* default value, but specified here purposefully as dropdowns fail without this property */
 }
 
-/*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and whatever may be necessary*/
-#event-modal-content {
-  width: 700px;
-}
-
-#event-form {
-  width: 400px;
-}
+/*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and what*/
 
 #eventModalTitle {
   border: none;
-}
-
-#h1month, #month {
-  font-weight: bold;
-  text-align: center;
 }
 
 .event-details {
@@ -45,6 +33,26 @@ body {
 #event-information {
   width: 60%;
   padding-left: 10px;
+}
+
+#showEvent {
+  align-self : flex-end;
+  width: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/*Use next two to align the button at the top of the form*/
+#showAttending {
+  align-self : flex-end;
+  width: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#attending {
+  align-self: flex-end;
+  width: 20%;
 }
 
 .container-fluid {

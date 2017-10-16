@@ -4,19 +4,9 @@
 }
 
 .slick_slide {
-  height: 240px;
-  padding-left: 2px;
-  padding-right: 2px;
+  width: 250px; /* this sets the width of our image to a static value... means variable height..  */
 }
 
 .slick-prev:before, .slick-next:before {
   color: grey;
-}
-
-.slider {
-  display: none;
-}
-
-.slider.slick-initialized {
-  display: block;
 }
