@@ -40,6 +40,8 @@ function updateProfile() {
       $('#phoneNumber').text(user.phoneNumber);
       console.log(user.username);
       console.log(user.lastName);
+    } else {
+      alert("No user");
     }
   });
 }
@@ -56,6 +58,8 @@ function saveProfile() {
         lastName: lName,
         phoneNumber: pNumber
       }, function (){});
+    } else {
+      alert("No user");
     }
   })
 }

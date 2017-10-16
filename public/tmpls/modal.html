@@ -15,8 +15,67 @@
 			</br>
 			Description:  <%= event.description %><br/><br/>
 			<div>
-				<a href="<%= event.url %>" class="btn btn-primary" data-eventId="<%= event.eventId %>"><i class = "icon-calendar"></i> More info</a>
+				<button id="attending" type="button" class="btn btn-primary" data-eventid=<%= event.id%>>
+					Attending?
+				</button>
+				<button id="showAttending" type="button" class="btn btn-primary" data-eventid=<%= event.id%>>
+					Show Attendees
+				</button>
 			</div>
 		</div>
 
+
 	</div>
+
+
+<script>
+	//add user to list of attendees when clicked
+	$('#attending').click(function() {
+		eventid = $(this).attr('data-eventid');
+		//get logged in user and add them to list
+		dpd.users.me(function(result, error) {
+			if (error)
+				alert("No logged in user found.");
+			else {
+				dpd.attendance.post ({
+					eventId : eventid,
+					userId : result.id
+				}, function(result,error) {
+						if (error)
+							alert("Error Occurred")
+						else {
+							alert("Added")
+						}
+				})//post
+			}//else
+		})//dpd.me
+	});//function
+
+	$('#showAttending').click(function() {
+		eventid = $(this).attr('data-eventid');
+		$('#attendingList').html("");
+		console.log(eventid);
+		dpd.attendance.get({eventId: eventid}, function(result, error) {
+			if (error || !eventid) {
+				alert(JSON.stringify(error));
+			}
+			else {
+					result.forEach(function(event) {
+						dpd.users.get({id:event.userId}, function (result, error) {
+							if (error)
+								alert(JSON.stringify(error));
+							else {
+								var ul = document.getElementById('attendingList');
+								var li = document.createElement("li");
+								li.appendChild(document.createTextNode(result.firstName + " " + result.lastName));
+								ul.appendChild(li);
+							}
+						});
+					});
+					$('#eventModal').modal('hide');
+					$('#attending-modal').modal('show');
+			}
+
+		})
+	});
+</script>
