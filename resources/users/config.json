@@ -32,6 +32,14 @@
 			"required": false,
 			"id": "socialMediaProfile",
 			"order": 3
+		},
+		"profilePhoto": {
+			"name": "profilePhoto",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "profilePhoto",
+			"order": 4
 		}
 	}
 }
