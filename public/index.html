@@ -16,48 +16,66 @@
   <!-- END: bootstrap-calendar -->
   <link rel="stylesheet" href="/css/datetimepicker/bootstrap-datetimepicker.css">
 
-  <title>Event Friend Finder</title>
   <link rel="stylesheet" href="/css/carousel.css">
   <link rel="stylesheet" href="/css/styles.css">
+  <title>Event Friend Finder</title>
 </head>
 
 <body>
   <div class="toolbar">
     <!-- BEGIN: Navigation Bar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navbarid">
+      <!--<a class="navbar-brand" href="#">Navbar</a>-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto"></ul>
+        <ul class="navbar-nav mr-auto">
+          <!--<li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="#">Action</a>
+              <a class="dropdown-item" href="#">Another action</a>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>-->
+        </ul>
         <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
-        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
+        <button id="signInButton" type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#login-modal" style="display:none;">
           Sign-In
         </button>
-        <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
+        <button id="logOutButton" type="button" class="btn btn-primary m-1" style="display:none;">
           Logout
         </button>
+        <!--
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        -->
       </div>
     </nav>
     <!-- END: Navigation Bar -->
 
   </div>
   <div class="header">
-    <!-- BEGIN: jQuery Slick Carousel -->
-    <div id="carousel" class="carousel_class">
-      <div><img class="slick_slide" src="/img/otter1.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter2.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter3.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter4.jpg"></div>
-      <div><img class="slick_slide" src="/img/otter5.jpg"></div>
-    </div>
-    <!-- END: jQuery Slick Carousel -->
+    <!-- BEGIN: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
+    <div id="carousel" class="carousel_class"></div>
+    <!-- END: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
   </div>
-  <div class="details">
+  <div class="details" style="margin-top: 10px;">
     <!-- BEGIN: Navigation tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item">
@@ -81,6 +99,7 @@
         <div class="container-fluid">
           <div style="display:flex;">
             <div id="calendarContainer" class="container">
+              <div id="month"></div>
               <div style="text-align:center;">
                 <div class="btn-group btn-group-sm">
                   <button class="btn btn-outline-primary" data-calendar-nav="prev">Prev</button>
@@ -96,8 +115,9 @@
               </div>
               <div id="calendar"></div>
             </div>
-            <div class="container" style="text-align:center;">
-              <div>
+            <!--<div class="container" style="text-align:center;">-->
+            <div class="container">
+              <div style="text-align:center;">
                 <h1>Event List</h1>
               </div>
               <div id="eventlist"></div>
@@ -107,28 +127,29 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
-      <!-- BEGIN: profile tab added by Alan -->
       <div class="tab-pane" id="profile" role="tabpanel">
-        <div id="profile-container"></div>
+        <div id="profile-container">
+          <image id="profileImage" src="data:image/png;base64,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" />
+        </div>
         <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
         <span>First Name: </span>
-        <span id="fName" class="my-profile" contenteditable="false">Insert First Name</span>
-        <br>
+        <span id="fName" class='my-profile' contenteditable="false">Insert First Name</span>
+      </br>
         <span>Last Name: </span>
-        <span id="lName" class="my-profile" contenteditable="false">Insert Last Name</span>
-        <br>
+        <span id="lName" class='my-profile' contenteditable="false">Insert Last Name</span>
+      </br>
         <span>Phone Number: </span>
-        <span id="phoneNumber" class="my-profile" contenteditable="false">Insert Phone Number</span>
-        <br>
-        <button class="edit-button" onclick="Editable()">Edit</button>
-        <button class="ok-button" onclick="NotEditable()">OK</button>
+        <span id="phoneNumber" class='my-profile' contenteditable="false">Insert Phone Number</span>
+      </br>
+        <button class='edit-button' onclick="Editable()">Edit</button>
+        <button class='ok-button' onclick="NotEditable()">OK</button>
       </div>
-      <!-- END: profile tab added by Alan -->
       <div class="tab-pane" id="messages" role="tabpanel"></div>
       <div class="tab-pane" id="settings" role="tabpanel"></div>
     </div>
     <!-- END: Tab panes -->
   </div>
+
   <!-- BEGIN # MODAL LOGIN -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -178,9 +199,6 @@
               <input id="register_username" class="form-control" type="text" placeholder="Enter Username" required>
               <label><b>Password</b></label>
               <input id="register_password" class="form-control" type="password" placeholder="Password" required>
-              <label for="InputFile"><b>Add a profile picture</b></label>
-							<input class="form-control" type="file" id="InputFile" onchange="setFiles(this)" multiple>
-							<button type="button" class="btn btn-primary" onClick="uploadProfilePhoto()">Upload</button>
             </div>
             <div class="modal-footer">
               <div>
@@ -198,6 +216,7 @@
     </div>
   </div>
   <!-- END # MODAL LOGIN -->
+
   <!-- BEGIN EVENT MODAL -->
   <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -229,10 +248,6 @@
               <!--<input id="event_start" class="form-control" type="text" placeholder="Start Date" required>-->
               <label><b>End Date</b></label>
               <input id="event_end" size="16" type="text" value="2017-10-15 15:45" readonly class="form_datetime">
-              <div>
-							<label for="InputFile"><b>Add a picture for your event</b></label>
-							<input class='form-control' type="file" id="InputFile" onchange="setFiles(this)" multiple>
-							<button type="button" class="btn btn-primary" onClick="uploadFiles()">Upload</button>
             </div>
             <div class="modal-footer">
               <div>
@@ -247,6 +262,7 @@
     </div>
   </div>
   <!-- End Event Modal -->
+
   <!-- BEGIN: Calendar Modal -->
   <div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -259,7 +275,7 @@
         </div>
         <div id="eventModalBody" class="modal-body"></div>
         <div class="modal-footer">
-            <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
+          <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
         </div>
         <!-- THIS BUTTON MAKES NO SENSE FOR NOW -->
         <!-- <div class="modal-footer">
@@ -270,6 +286,7 @@
     </div>
   </div>
   <!-- END: Calendar Modal -->
+
   <!-- BEGIN: deployd object import -->
   <script type="text/javascript" src="/dpd.js"></script>
   <!-- END: deployd object import -->
@@ -278,7 +295,10 @@
   <script type="text/javascript" src="/js/popper.min.js" integrity="" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
   <!-- END: Bootstrap 4 Latest compiled and minified JavaScript -->
-  <!-- BEGIN: bootstrap-calendar requirements, jstz added just in case -->
+  <!-- BEGIN: jQuery Slick Carousel -->
+  <script type="text/javascript" src="/slick/slick.js"></script>
+  <!-- END: jQuery Slick Carousel -->
+  <!-- BEGIN: bootstrap-calendar requirements, jstz doesn't seem to be used... oh well -->
   <script type="text/javascript" src="/js/underscore-min.js"></script>
   <script type="text/javascript" src="/js/jstz/jstz.min.js"></script>
   <script type="text/javascript" src="/js/calendar/calendar.js"></script>
@@ -287,13 +307,12 @@
   <!-- START: bootstrap-datetimepicker -->
   <script type="text/javascript" src="/js/datetimepicker/bootstrap-datetimepicker.js"></script>
   <!-- END: bootstrap-datetimepicker -->
-  <!-- BEGIN: jQuery Slick Carousel -->
-  <script type="text/javascript" src="/slick/slick.min.js"></script>
-  <!-- END: jQuery Slick Carousel -->
-  <script type="text/javascript" src="/js/main.js"></script>
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
-
+  <script type="text/javascript" src="/js/main.js"></script>
+  <!-- BEGIN: Edit and Update Profile -->
+  <script type="text/javascript" src="/js/profile.js"></script>
+  <!-- BEGIN: Edit and Update Profile -->
 </body>
 
 </html>

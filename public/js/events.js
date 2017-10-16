@@ -7,7 +7,9 @@ $('.form_datetime').datetimepicker({
 });
 
 var rg_owner;
-var rg_img_url = 'http://localhost:2403/image_upload/no_img.png';
+// TEMP: may or may not use this property
+// var rg_eventId;
+// TEMP: may or may not use this property
 
 $('#submitEvent').click(function() {
   var startDate = new Date($('#event_start').val());
@@ -28,7 +30,6 @@ $('#submitEvent').click(function() {
     } else {
       rg_owner = result.id;
       console.log('OWNER1: ' + rg_owner);
-
       //if user is logged in, post
       dpd.events.post({
         ownerId: rg_owner,
@@ -39,12 +40,14 @@ $('#submitEvent').click(function() {
         streetAddress: rg_address,
         city: rg_city,
         statePrefix: rg_state,
-        zip: rg_zip,
-        eventImage: rg_img_url
+        zip: rg_zip
       }, function(result, error) {
         if (error)
           alert(JSON.stringify(error));
         else
+          //TEMP: may or may not use this property
+          //  rg_eventId = result.id;
+          //TEMP: may or may not use this property
           //if successfully added event, add owner to list of attendees
           //using return from post
           dpd.attendance.post({
@@ -58,58 +61,3 @@ $('#submitEvent').click(function() {
   });
   console.log('return');
 });
-
-var files = [];
-
-var uploadFiles = function() {
-
-  var fd = new FormData()
-  for (var i in files) {
-    fd.append('uploadedFile', files[i])
-  }
-  var xhr = new XMLHttpRequest();
-  xhr.open('POST', '/event-images?subdir=eventImages&uniqueFilename=true');
-  xhr.onload = function() {
-    var response = JSON.parse(this.responseText);
-    console.log(response);
-  };
-  xhr.send(fd);
-
-  alert('Image Uploaded Successfully');
-
-  //get image url
-  var req = new XMLHttpRequest();
-  req.onreadystatechange = function() {
-    if (req.readyState === 4) {
-      if (req.status === 200) {
-        document.body.classname = 'ok';
-        var res = JSON.parse(req.responseText);
-        var target = res[res.length - 1].filename;
-
-        rg_img_url = 'http://localhost:2403/image_upload/' + target;
-
-      } else {
-        document.body.classname = 'error';
-      }
-    }
-  };
-  req.open('get', '/event-images', true);
-  req.send(null);
-};
-
-var setFiles = function(element) {
-  console.log('files:', element.files);
-  // Turn the FileList object into an Array
-  files = [];
-  for (var i = 0; i < element.files.length; i++) {
-    files.push(element.files[i]);
-  }
-};
-
-var deleteFile = function(element, id) {
-  $(element).closest('tr').remove();
-  dpd.upload.del(id, function(data, status) {
-    $('.alert-success').show();
-    $('.alert-success').append('File removed!');
-  });
-};
