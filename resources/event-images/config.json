@@ -1,6 +1,6 @@
 {
 	"type": "Fileupload",
-	"directory": "upload",
+	"directory": "event-images",
 	"authorization": true,
 	"uniqueFilename": true
 }
