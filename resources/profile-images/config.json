@@ -1,6 +1,6 @@
 {
 	"type": "Fileupload",
-	"directory": "upload",
+	"directory": "profile-images",
 	"authorization": false,
 	"uniqueFilename": true
 }
