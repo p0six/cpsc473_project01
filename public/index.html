@@ -16,15 +16,16 @@
   <!-- END: bootstrap-calendar -->
   <link rel="stylesheet" href="/css/datetimepicker/bootstrap-datetimepicker.css">
 
+  <title>Event Friend Finder</title>
   <link rel="stylesheet" href="/css/carousel.css">
   <link rel="stylesheet" href="/css/styles.css">
-  <title>Event Friend Finder</title>
 </head>
 
 <body>
   <div class="toolbar">
     <!-- BEGIN: Navigation Bar -->
-    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light" id="navbarid">
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -34,10 +35,10 @@
         <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
-        <button id="signInButton" type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#login-modal" style="display:none;">
+        <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
           Sign-In
         </button>
-        <button id="logOutButton" type="button" class="btn btn-primary m-1" style="display:none;">
+        <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
           Logout
         </button>
       </div>
@@ -46,11 +47,17 @@
 
   </div>
   <div class="header">
-    <!-- BEGIN: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
-    <div id="carousel" class="carousel_class"></div>
-    <!-- END: jQuery Slick Carousel - Populated by onAfterEventsLoad in 'app.js'-->
+    <!-- BEGIN: jQuery Slick Carousel -->
+    <div id="carousel" class="carousel_class">
+      <div><img class="slick_slide" src="/img/otter1.jpg"></div>
+      <div><img class="slick_slide" src="/img/otter2.jpg"></div>
+      <div><img class="slick_slide" src="/img/otter3.jpg"></div>
+      <div><img class="slick_slide" src="/img/otter4.jpg"></div>
+      <div><img class="slick_slide" src="/img/otter5.jpg"></div>
+    </div>
+    <!-- END: jQuery Slick Carousel -->
   </div>
-  <div class="details" style="margin-top: 10px;">
+  <div class="details">
     <!-- BEGIN: Navigation tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item">
@@ -74,7 +81,6 @@
         <div class="container-fluid">
           <div style="display:flex;">
             <div id="calendarContainer" class="container">
-              <div id="month"></div>
               <div style="text-align:center;">
                 <div class="btn-group btn-group-sm">
                   <button class="btn btn-outline-primary" data-calendar-nav="prev">Prev</button>
@@ -90,9 +96,8 @@
               </div>
               <div id="calendar"></div>
             </div>
-            <!--<div class="container" style="text-align:center;">-->
-            <div class="container">
-              <div style="text-align:center;">
+            <div class="container" style="text-align:center;">
+              <div>
                 <h1>Event List</h1>
               </div>
               <div id="eventlist"></div>
@@ -124,7 +129,6 @@
     </div>
     <!-- END: Tab panes -->
   </div>
-
   <!-- BEGIN # MODAL LOGIN -->
   <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -174,6 +178,9 @@
               <input id="register_username" class="form-control" type="text" placeholder="Enter Username" required>
               <label><b>Password</b></label>
               <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+              <label for="InputFile"><b>Add a profile picture</b></label>
+							<input class="form-control" type="file" id="InputFile" onchange="setFiles(this)" multiple>
+							<button type="button" class="btn btn-primary" onClick="uploadProfilePhoto()">Upload</button>
             </div>
             <div class="modal-footer">
               <div>
@@ -191,7 +198,6 @@
     </div>
   </div>
   <!-- END # MODAL LOGIN -->
-
   <!-- BEGIN EVENT MODAL -->
   <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
@@ -223,6 +229,10 @@
               <!--<input id="event_start" class="form-control" type="text" placeholder="Start Date" required>-->
               <label><b>End Date</b></label>
               <input id="event_end" size="16" type="text" value="2017-10-15 15:45" readonly class="form_datetime">
+              <div>
+							<label for="InputFile"><b>Add a picture for your event</b></label>
+							<input class='form-control' type="file" id="InputFile" onchange="setFiles(this)" multiple>
+							<button type="button" class="btn btn-primary" onClick="uploadFiles()">Upload</button>
             </div>
             <div class="modal-footer">
               <div>
@@ -237,7 +247,6 @@
     </div>
   </div>
   <!-- End Event Modal -->
-
   <!-- BEGIN: Calendar Modal -->
   <div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -250,7 +259,7 @@
         </div>
         <div id="eventModalBody" class="modal-body"></div>
         <div class="modal-footer">
-          <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
+            <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
         </div>
         <!-- THIS BUTTON MAKES NO SENSE FOR NOW -->
         <!-- <div class="modal-footer">
@@ -261,7 +270,6 @@
     </div>
   </div>
   <!-- END: Calendar Modal -->
-
   <!-- BEGIN: deployd object import -->
   <script type="text/javascript" src="/dpd.js"></script>
   <!-- END: deployd object import -->
@@ -270,10 +278,7 @@
   <script type="text/javascript" src="/js/popper.min.js" integrity="" crossorigin="anonymous"></script>
   <script type="text/javascript" src="/js/bootstrap.min.js" integrity="" crossorigin="anonymous"></script>
   <!-- END: Bootstrap 4 Latest compiled and minified JavaScript -->
-  <!-- BEGIN: jQuery Slick Carousel -->
-  <script type="text/javascript" src="/slick/slick.js"></script>
-  <!-- END: jQuery Slick Carousel -->
-  <!-- BEGIN: bootstrap-calendar requirements, jstz doesn't seem to be used... oh well -->
+  <!-- BEGIN: bootstrap-calendar requirements, jstz added just in case -->
   <script type="text/javascript" src="/js/underscore-min.js"></script>
   <script type="text/javascript" src="/js/jstz/jstz.min.js"></script>
   <script type="text/javascript" src="/js/calendar/calendar.js"></script>
@@ -282,12 +287,13 @@
   <!-- START: bootstrap-datetimepicker -->
   <script type="text/javascript" src="/js/datetimepicker/bootstrap-datetimepicker.js"></script>
   <!-- END: bootstrap-datetimepicker -->
+  <!-- BEGIN: jQuery Slick Carousel -->
+  <script type="text/javascript" src="/slick/slick.min.js"></script>
+  <!-- END: jQuery Slick Carousel -->
+  <script type="text/javascript" src="/js/main.js"></script>
   <script type="text/javascript" src="/js/loginhandler.js"></script>
   <script type="text/javascript" src="/js/events.js"></script>
-  <script type="text/javascript" src="/js/main.js"></script>
-  <!-- BEGIN: Edit and Update Profile -->
-  <script type="text/javascript" src="/js/profile.js"></script>
-  <!-- BEGIN: Edit and Update Profile -->
+
 </body>
 
 </html>
