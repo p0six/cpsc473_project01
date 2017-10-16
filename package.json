@@ -8,7 +8,7 @@
     "deployd-cli": "^2.0.2",
     "dpd-clientlib": "^0.0.1",
     "dpd-dashboard": "^0.0.2",
-    "dpd-fileupload": "^0.0.17"
+    "dpd-fileupload": "0.0.17"
   },
   "devDependencies": {},
   "engines": {
