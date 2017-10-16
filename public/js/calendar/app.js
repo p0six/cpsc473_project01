@@ -35,7 +35,7 @@
         var eventTime = new Date(val.start);
         // This populates our Event list basd on current calendar selection.
         $(document.createElement('li'))
-          .html('<a href="' + val.url + '">' + val.title + ' - ' + eventTime.toLocaleString() + '</a>')
+          .html('<a href="' + val.url + '" data-toggle="modal" data-target="#eventModal" container="#eventModal" data-event-class data-toggle="tooltip" class="myEventList" data-event-title="' + val.title + '" data-event-id="' + this.id + '">' + val.title + ' - ' + eventTime.toLocaleString() + '</a>')
           .appendTo(list);
 
         // This populates our Carousel container with only event images matching our current calendar selection.
@@ -49,7 +49,7 @@
         window.initCarousel();
       }
 
-      $('.myCarousel').click(function() {
+      $('.myCarousel, .myEventList').click(function() {
         $('#eventModalTitle').html($(this).data('event-title'));
         calendar._loadTemplate('modal');
         $.ajax({
