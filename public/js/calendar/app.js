@@ -35,12 +35,12 @@
         var eventTime = new Date(val.start);
         // This populates our Event list basd on current calendar selection.
         $(document.createElement('li'))
-          .html('<a href="' + val.url + '">' + val.title + ' - ' + eventTime.toLocaleString() + '</a>')
+          .html('<a href="' + val.url + '" data-toggle="modal" data-target="#eventModal" container="#eventModal" data-event-class data-toggle="tooltip" class="myEventList" data-event-title="' + val.title + '" data-event-id="' + this.id + '">' + val.title + ' - ' + eventTime.toLocaleString() + '</a>')
           .appendTo(list);
 
         // This populates our Carousel container with only event images matching our current calendar selection.
         $(document.createElement('div'))
-          .html('<img class="slick_slide" src="' + val.eventImage + '">')
+          .html('<a href="' + val.url + '" data-event-title="' + val.title + '" data-event-start="' + val.start + '" data-event-description="' + val.description + '" data-event-id="' + this.id + '" data-toggle="modal" data-target="#eventModal" container="#eventModal" data-event-class data-toggle="tooltip" class="myCarousel"><img class="slick_slide" src="' + val.eventImage + '"></a>')
           .appendTo(carousel);
       });
 
@@ -48,6 +48,20 @@
       if (window.initCarousel !== undefined) {
         window.initCarousel();
       }
+
+      $('.myCarousel, .myEventList').click(function() {
+        $('#eventModalTitle').html($(this).data('event-title'));
+        calendar._loadTemplate('modal');
+        $.ajax({
+          url: '/events/' + $(this).data('event-id'),
+          context: document.body
+        }).done(function(response) {
+          $('#eventModalBody').html(calendar.options.templates['modal']({
+            'event': response,
+            'calendar': calendar
+          }));
+        });
+      });
 
     },
     onAfterViewLoad: function(view) {
@@ -79,22 +93,4 @@
     });
   });
 
-  /*$('#first_day').change(function() {
-    var value = $(this).val();
-    value = value.length ? parseInt(value) : null;
-    calendar.setOptions({
-      first_day: value
-    });
-    calendar.view();
-  });*/
-
-  /*$('#language').change(function() {
-    calendar.setLanguage($(this).val());
-    calendar.view();
-  });*/
-
-  //$('#eventModal .modal-header, #eventModal .modal-footer').click(function(e) {
-  //e.preventDefault();
-  //e.stopPropagation();
-  //});
 })($);
