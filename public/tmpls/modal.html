@@ -5,7 +5,7 @@
 
 	<div class="event-details" id="eventInfo" style="width:100%;">
 		<div id="event-image">
-			<img src="img/otter1.jpg" id="modalPicture">
+			<img src=<%= event.eventImage %> id="modalPicture">
 		</div>
 		<div id="event-information">
 			Location: <%= event.streetAddress %>, <%= event.city %>, <%= event.statePrefix %> <%= event.zip %><br /><br/>
@@ -19,10 +19,10 @@
 			</div>-->
 		</div>
 
-		<button id="attending" type="button" class="btn btn-primary" data-eventid=<%= event.id%> style="height:5%">
+		<button id="attending" type="button" class="btn btn-primary" data-eventid=<%= event.id%>>
 			Attending?
 		</button>
-		<button id="showAttending" type="button" class="btn btn-primary" data-eventid=<%= event.id%> style="height:5%">
+		<button id="showAttending" type="button" class="btn btn-primary" data-eventid=<%= event.id%>>
 			Show Attendees
 		</button>
 	</div>

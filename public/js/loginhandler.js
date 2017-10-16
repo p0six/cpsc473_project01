@@ -1,3 +1,6 @@
+/* global $ */
+var dpd = window.dpd;
+
 //recieves and checks user data against dpd data
 //changes modal form and login - logout buttons
 $(function() {
@@ -24,6 +27,7 @@ $(function() {
             $('#signInButton').hide();
             $('#logOutButton').show();
             $('#login-modal').modal('hide');
+            updateProfile();
           }
         });
         break;
@@ -50,6 +54,7 @@ $(function() {
               username: $rg_username,
               password: $rg_password
             });
+            updateProfile();
           }
         });
 

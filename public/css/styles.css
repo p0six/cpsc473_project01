@@ -14,7 +14,15 @@ body {
   overflow: visible;  /* default value, but specified here purposefully as dropdowns fail without this property */
 }
 
-/*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and what*/
+/*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and whatever may be necessary*/
+
+#event-modal-content {
+  width: 700px;
+}
+
+#event-form {
+  width: 400px;
+}
 
 #eventModalTitle {
   border: none;
@@ -32,6 +40,7 @@ body {
 
 #event-information {
   width: 60%;
+  word-wrap: break-word;
   padding-left: 10px;
 }
 
@@ -91,4 +100,34 @@ body {
 .details {
   border-color: blue;
   overflow: inherit;  /* this may need to change to 'visible' if we keep a dropdown here.. */
+}
+
+.ok-button {
+  visibility: hidden;
+}
+
+#imageUpload
+{
+    display: none;
+}
+
+#profileImage
+{
+    cursor: pointer;
+}
+
+#profile-container {
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+
+#profile-container img {
+    width: 150px;
+    height: 150px;
 }

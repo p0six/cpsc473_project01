@@ -1098,22 +1098,12 @@ if (!String.prototype.formatNum) {
     if (self.options.modal_type == 'template')
       $(document.createElement('div'));
 
-
-    $('#attendance').click(function() {
-      alert(JSON.stringify($(this).data('id')));
-      //get_user_id(function() {});
-      //setTimeout(function() {
-      //	dpd.users.post(function(result, error)) {
-      //	}, 30);
-      //}
-    });
-
     $('a[data-event-id]', this.context).on('click', function(event) {
       event.preventDefault();
       event.stopPropagation();
+
       var url = $(this).attr('href');
       var id = $(this).data('event-id');
-
       event = _.find(self.options.events, function(event) {
         return event.id == id;
       });
@@ -1122,7 +1112,6 @@ if (!String.prototype.formatNum) {
         ifrm.attr('src', url);
         $('.modal-body', modal).html(ifrm);
         // BEGIN: iFrame Interception - Calendar was overwriting my changes... no longer
-        alert($(this).data('event-start'));
         var eventTime = new Date($(this).data('event-start'));
         $('#eventModalBody').html($(this).data('event-description'));
         $('#eventModalTitle').html(this.title + ' - ' + eventTime.toLocaleString());
