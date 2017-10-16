@@ -183,6 +183,13 @@
               <input id="register_username" class="form-control" type="text" placeholder="Enter Username" required>
               <label><b>Password</b></label>
               <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+              <!-- Re-Enable once This is set correctly.. -->
+              <!--
+              <label for="InputFile"><b>Add a profile picture</b></label>
+              <input class="form-control" type="file" id="InputFile" onchange="setFiles(this)" multiple>
+              <button type="button" class="btn btn-primary" onclick="uploadProfilePhoto()">Upload</button>
+              -->
+              <!-- Re-Enable once this is set correctly... -->
             </div>
             <div class="modal-footer">
               <div>
@@ -232,7 +239,16 @@
               <!--<input id="event_start" class="form-control" type="text" placeholder="Start Date" required>-->
               <label><b>End Date</b></label>
               <input id="event_end" size="16" type="text" value="2017-10-15 15:45" readonly class="form_datetime">
+
+              <label for="InputFile"><b>Add a picture for your event</b></label>
+              <input class="form-control" type="file" id="InputFile" onchange="setFiles(this)" multiple>
+              <button type="button" class="btn btn-primary" onclick="uploadFiles()">Upload</button>
+
             </div>
+
+
+
+
             <div class="modal-footer">
               <div>
                 <button type="submit" id="submitEvent" class="btn btn-primary btn-lg btn-block">Create</button>

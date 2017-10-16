@@ -9,6 +9,7 @@ $(function() {
   var $formRegister = $('#register-form');
   var $divForms = $('#div-forms');
   var $modalAnimateTime = 300;
+  var rg_img_url = '/upload/default-no-image.png';
 
   $('form').submit(function() {
     //Switch statment is based on what kind of login form
@@ -27,7 +28,6 @@ $(function() {
             $('#signInButton').hide();
             $('#logOutButton').show();
             $('#login-modal').modal('hide');
-            updateProfile();
           }
         });
         break;
@@ -41,7 +41,8 @@ $(function() {
           username: $rg_username,
           password: $rg_password,
           firstName: $rg_fname,
-          lastName: $rg_lname
+          lastName: $rg_lname,
+          profilePhoto: rg_img_url
         }, function(user, error) {
           if (error) {
             $('#register-fail-msg').text('Username is Taken');
@@ -54,7 +55,6 @@ $(function() {
               username: $rg_username,
               password: $rg_password
             });
-            updateProfile();
           }
         });
 
@@ -108,3 +108,42 @@ $(function() {
   }
 
 });
+
+var files = [];
+var uploadProfilePhoto = function() {
+  var fd = new FormData();
+  for (var i in files) {
+    fd.append('uploadedFile', files[i]);
+  }
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/profile-images?subdir=profileImages&uniqueFilename=true');
+  xhr.onload = function() {
+    var response = JSON.parse(this.responseText);
+    console.log(response);
+  };
+  xhr.send(fd);
+
+  swal({
+    title: 'Image Uploaded Successfully!',
+    text: 'Horray!',
+    type: 'success',
+    confirmButtonText: 'Cool'
+  })
+
+  //get image url
+  var req = new XMLHttpRequest();
+  req.onreadystatechange = function() {
+    if (req.readyState === 4) {
+      if (req.status === 200) {
+        document.body.classname = 'ok';
+        var res = JSON.parse(req.responseText);
+        var target = res[res.length - 1].filename;
+        rg_img_url = '/upload/profileImages/' + target;
+      } else {
+        document.body.classname = 'error';
+      }
+    }
+  };
+  req.open('get', '/profile-images', true);
+  req.send(null);
+};

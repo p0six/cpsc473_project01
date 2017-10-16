@@ -90,14 +90,12 @@ var uploadFiles = function() {
   };
   xhr.send(fd);
 
-  //alert('Image Uploaded Successfully');
   swal({
     title: 'Image Uploaded Successfully!',
     text: 'Horray!',
     type: 'success',
     confirmButtonText: 'Cool'
   })
-  calendar.view();
 
   //get image url
   var req = new XMLHttpRequest();
@@ -107,9 +105,7 @@ var uploadFiles = function() {
         document.body.classname = 'ok';
         var res = JSON.parse(req.responseText);
         var target = res[res.length - 1].filename;
-
         rg_img_url = '/upload/eventImages/' + target;
-
       } else {
         document.body.classname = 'error';
       }
