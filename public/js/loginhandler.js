@@ -78,7 +78,13 @@ $(function() {
   $('#logOutButton').click(function() {
     dpd.users.logout(function(result, error) {
       if (error) {
-        alert(JSON.stringify(error));
+        swal({
+          title: 'Error Logging Out!',
+          text: JSON.stringify(error),
+          type: 'error',
+          confirmButtonText: 'Cool'
+        })
+
       } else {
         $('#signInButton').show();
         $('#logOutButton').hide();

@@ -8,12 +8,12 @@
 			<img src=<%= event.eventImage %> id="modalPicture">
 		</div>
 		<div id="event-information">
-			Location: <%= event.streetAddress %>, <%= event.city %>, <%= event.statePrefix %> <%= event.zip %><br /><br/>
-			Start Date: <%= event.date_start.toLocaleString() %></br>
-			</br>
-			End Date: <%= event.date_end.toLocaleString() %></br>
-			</br>
-			Description:  <%= event.description %><br/><br/>
+			Location: <%= event.streetAddress %>, <%= event.city %>, <%= event.statePrefix %> <%= event.zip %><br><br>
+			Start Date: <%= event.date_start.toLocaleString() %><br>
+			<br>
+			End Date: <%= event.date_end.toLocaleString() %><br>
+			<br>
+			Description:  <%= event.description %><br><br>
 			<div>
 				<button id="attending" type="button" class="btn btn-primary" data-eventid=<%= event.id%>>
 					Attending?
@@ -35,16 +35,31 @@
 		//get logged in user and add them to list
 		dpd.users.me(function(result, error) {
 			if (error)
-				alert("No logged in user found.");
+				swal({
+          title: 'Gotta Login First!',
+          text: 'No Logged in user found.',
+          type: 'error',
+          confirmButtonText: 'Cool'
+        })
 			else {
 				dpd.attendance.post ({
 					eventId : eventid,
 					userId : result.id
 				}, function(result,error) {
 						if (error)
-							alert("Error Occurred")
+				      swal({
+                title: 'Error Posting Attendance!',
+                text: 'Try logging in first.',
+                type: 'error',
+                confirmButtonText: 'Cool'
+              })
 						else {
-							alert("Added")
+				      swal({
+                title: 'Attendance Posted!',
+                text: 'Now tell your friends to go with!',
+                type: 'success',
+                confirmButtonText: 'Cool'
+              })
 						}
 				})//post
 			}//else
@@ -57,13 +72,23 @@
 		console.log(eventid);
 		dpd.attendance.get({eventId: eventid}, function(result, error) {
 			if (error || !eventid) {
-				alert(JSON.stringify(error));
+				swal({
+          title: 'An Error Occurred!',
+          text: JSON.stringify(error),
+          type: 'error',
+          confirmButtonText: 'Cool'
+        })
 			}
 			else {
 					result.forEach(function(event) {
 						dpd.users.get({id:event.userId}, function (result, error) {
 							if (error)
-								alert(JSON.stringify(error));
+				        swal({
+                  title: 'An Error Occurred?',
+                  text: JSON.stringify(error),
+                  type: 'error',
+                  confirmButtonText: 'Cool'
+                })
 							else {
 								var ul = document.getElementById('attendingList');
 								var li = document.createElement("li");

@@ -12,9 +12,6 @@ $('#showEvent').click(function() {
 });
 
 var rg_owner;
-// TEMP: may or may not use this property
-// var rg_eventId;
-// TEMP: may or may not use this property
 
 $('#submitEvent').click(function() {
   var startDate = new Date($('#event_start').val());
@@ -31,7 +28,12 @@ $('#submitEvent').click(function() {
 
   dpd.users.me(function(result, error) {
     if (error || !result) {
-      alert(JSON.stringify(error));
+			swal({
+        title: 'Error Posting Event!',
+        text: JSON.stringify(error),
+        type: 'error',
+        confirmButtonText: 'Cool'
+      })
     } else {
       rg_owner = result.id;
       //if user is logged in, post
@@ -47,14 +49,24 @@ $('#submitEvent').click(function() {
         zip: rg_zip
       }, function(result, error) {
         if (error)
-          alert(JSON.stringify(error));
+				  swal({
+            title: 'Error Posting Event!',
+            text: JSON.stringify(error),
+            type: 'error',
+            confirmButtonText: 'Cool'
+          })
         else
           dpd.attendance.post({
             eventId: result.id,
             userId: rg_owner
           });
         $('#event-modal').modal('hide');
-        alert('Event Added!');
+				swal({
+          title: 'Event Successfully Added!',
+          text: 'Now go invite some friends!',
+          type: 'success',
+          confirmButtonText: 'Cool'
+        })
       });
     }
   });
