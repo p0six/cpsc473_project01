@@ -33,37 +33,64 @@
 	$('#attending').click(function() {
 		eventid = $(this).attr('data-eventid');
 		//get logged in user and add them to list
-		dpd.users.me(function(result, error) {
+		dpd.users.me(function(user, error) {
 			if (error)
 				swal({
           title: 'Gotta Login First!',
           text: 'No Logged in user found.',
           type: 'error',
           confirmButtonText: 'Cool'
-        })
+        });
 			else {
-				dpd.attendance.post ({
-					eventId : eventid,
-					userId : result.id
-				}, function(result,error) {
-						if (error)
-				      swal({
-                title: 'Error Posting Attendance!',
-                text: 'Try logging in first.',
-                type: 'error',
-                confirmButtonText: 'Cool'
-              })
-						else {
-				      swal({
-                title: 'Attendance Posted!',
-                text: 'Now tell your friends to go with!',
-                type: 'success',
-                confirmButtonText: 'Cool'
-              })
-						}
-				})//post
-			}//else
-		})//dpd.me
+			//user found
+			//check if user in list - if error, post, else, delete
+			dpd.attendance.get({userId:user.id, eventId:eventid}, function(attendance, error) {
+					if (error || (attendance.length == 0)) {
+						//user is not in list
+						dpd.attendance.post ({
+							eventId : eventid,
+							userId : user.id
+						}, function(result,error) {
+								if (error)
+						      swal({
+		                title: 'Error Posting Attendance!',
+		                text: 'Try logging in first.',
+		                type: 'error',
+		                confirmButtonText: 'Cool'
+		              });
+								else {
+						      swal({
+		                title: 'Attendance Posted!',
+		                text: 'Now tell your friends to go with!',
+		                type: 'success',
+		                confirmButtonText: 'Cool'
+		              });
+								}
+						});//post attendance
+					}
+					else {
+						dpd.attendance.del({id: attendance[0].id}, function(attempt, error) {
+							if (error) {
+								swal({
+									title: 'Error Posting Attendance!',
+									text: 'An Error Occured While Deleting',
+									type: 'error',
+									confirmButtonText: 'Cool'
+								});
+							}
+							else {
+								swal({
+									title: 'Posted Attendance!',
+									text: 'You Are No Longer Attending!',
+									type: 'success',
+									confirmButtonText: 'Cool'
+								});
+							}
+						});//dpd.del
+				}//else
+			});//get attendance
+		}//user else
+		});//dpd.me
 	});//function
 
 	$('#showAttending').click(function() {
