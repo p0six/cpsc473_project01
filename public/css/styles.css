@@ -15,6 +15,7 @@ body {
 }
 
 /*modal-content and event-form used to manage size of modal and portioning. Space on the side for picture and whatever may be necessary*/
+
 #event-modal-content {
   width: 700px;
 }
@@ -44,7 +45,28 @@ body {
 
 #event-information {
   width: 60%;
+  word-wrap: break-word;
   padding-left: 10px;
+}
+
+#showEvent {
+  align-self : flex-end;
+  width: 20%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+/*Use next two to align the button at the top of the form*/
+#showAttending {
+  align-self : flex-end;
+  width: 30%;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#attending {
+  align-self: flex-end;
+  width: 30%;
 }
 
 .container-fluid {
