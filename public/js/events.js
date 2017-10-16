@@ -6,11 +6,6 @@ $('.form_datetime').datetimepicker({
   format: 'yyyy-mm-dd hh:ii'
 });
 
-$('#showEvent').click(function() {
-	$('#attending-modal').modal('hide');
-	$('#eventModal').modal('show');
-});
-
 var rg_owner;
 // TEMP: may or may not use this property
 // var rg_eventId;
@@ -34,6 +29,7 @@ $('#submitEvent').click(function() {
       alert(JSON.stringify(error));
     } else {
       rg_owner = result.id;
+      console.log('OWNER1: ' + rg_owner);
       //if user is logged in, post
       dpd.events.post({
         ownerId: rg_owner,
@@ -49,6 +45,11 @@ $('#submitEvent').click(function() {
         if (error)
           alert(JSON.stringify(error));
         else
+          //TEMP: may or may not use this property
+          //  rg_eventId = result.id;
+          //TEMP: may or may not use this property
+          //if successfully added event, add owner to list of attendees
+          //using return from post
           dpd.attendance.post({
             eventId: result.id,
             userId: rg_owner
