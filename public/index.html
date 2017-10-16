@@ -25,32 +25,14 @@
   <div class="toolbar">
     <!-- BEGIN: Navigation Bar -->
     <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Navbar</a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown link</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-        </ul>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#event-modal">
+        <ul class="navbar-nav mr-auto"></ul>
+        <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
         <button id="signInButton" type="button" class="btn btn-primary" data-toggle="modal" data-target="#login-modal" style="display:none;">
@@ -59,12 +41,6 @@
         <button id="logOutButton" type="button" class="btn btn-primary" style="display:none;">
           Logout
         </button>
-        <!--
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        -->
       </div>
     </nav>
     <!-- END: Navigation Bar -->
@@ -131,9 +107,25 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
-      <div class="tab-pane" id="profile" role="tabpanel">Pane 1</div>
-      <div class="tab-pane" id="messages" role="tabpanel">Second Pane</div>
-      <div class="tab-pane" id="settings" role="tabpanel">3rd PANE MANG!!</div>
+      <!-- BEGIN: profile tab added by Alan -->
+      <div class="tab-pane" id="profile" role="tabpanel">
+        <div id="profile-container"></div>
+        <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+        <span>First Name: </span>
+        <span id="fName" class="my-profile" contenteditable="false">Insert First Name</span>
+        <br>
+        <span>Last Name: </span>
+        <span id="lName" class="my-profile" contenteditable="false">Insert Last Name</span>
+        <br>
+        <span>Phone Number: </span>
+        <span id="phoneNumber" class="my-profile" contenteditable="false">Insert Phone Number</span>
+        <br>
+        <button class="edit-button" onclick="Editable()">Edit</button>
+        <button class="ok-button" onclick="NotEditable()">OK</button>
+      </div>
+      <!-- END: profile tab added by Alan -->
+      <div class="tab-pane" id="messages" role="tabpanel"></div>
+      <div class="tab-pane" id="settings" role="tabpanel"></div>
     </div>
     <!-- END: Tab panes -->
   </div>
