@@ -235,6 +235,10 @@
               <input id="event_title" class="form-control" type="text" placeholder="Event Name" required>
               <label><b>Description</b></label>
               <input id="event_description" class="form-control" type="text" placeholder="Description" required>
+			  <label><b>Start Date</b></label>
+              <input id="event_start" size="16" type="text" value="2017-10-15 14:45" readonly class="form_datetime">
+              <label><b>End Date</b></label>
+              <input id="event_end" size="16" type="text" value="2017-10-15 15:45" readonly class="form_datetime">
               <label><b>Street Address</b></label>
               <input id="event_address" class="form-control" type="text" placeholder="Street Address" required>
               <label><b>City</b></label>
@@ -243,11 +247,6 @@
               <input id="event_state" class="form-control" type="text" placeholder="State Prefix" required>
               <label><b>Zip Code</b></label>
               <input id="event_zip" class="form-control" type="text" placeholder="Zip Code" required>
-              <label><b>Start Date</b></label>
-              <input id="event_start" size="16" type="text" value="2017-10-15 14:45" readonly class="form_datetime">
-              <!--<input id="event_start" class="form-control" type="text" placeholder="Start Date" required>-->
-              <label><b>End Date</b></label>
-              <input id="event_end" size="16" type="text" value="2017-10-15 15:45" readonly class="form_datetime">
             </div>
             <div class="modal-footer">
               <div>
@@ -263,6 +262,30 @@
   </div>
   <!-- End Event Modal -->
 
+  <!-- START Attendees Modal -->
+  <div class="modal fade modal-md" id="attending-modal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 id="attendingModalTitle" class="modal-header">Attending</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div id="attendingModalBody" class="modal-body"></div>
+          <ul id="attendingList">
+          </ul>
+          <div class="modal-footer">
+            <button id="showEvent" type="button" class="btn btn-primary">
+              Show Event
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  <!-- END Attendees Modal -->
+  
   <!-- BEGIN: Calendar Modal -->
   <div class="modal fade bd-example-modal-lg" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg" role="document">
@@ -274,9 +297,6 @@
           </button>
         </div>
         <div id="eventModalBody" class="modal-body"></div>
-        <div class="modal-footer">
-          <button type="button" id="saveChanges" class="btn btn-primary">View Attendees</button>
-        </div>
         <!-- THIS BUTTON MAKES NO SENSE FOR NOW -->
         <!-- <div class="modal-footer">
             <button type="button" id="saveChanges" class="btn btn-primary">Save changes</button>
