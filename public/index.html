@@ -127,26 +127,27 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
+      <!-- Begin profile tab -->
         <div class="tab-pane" id="profile" onclick="updateProfile()" role="tabpanel">
-        <div id="profileSettings">
-        <div id="profile-container">
-           <image id="profileImage" src="upload/default-no-image.png">
-           </div>
-        <input id="imageUpload" type="file"
-               name="profile_photo" placeholder="Photo" required="" capture>
-    <span>First Name: </span>
-    <span id="fName" class='my-profile' contenteditable="false">Insert First Name</span>
-  </br>
-    <span>Last Name: </span>
-    <span id="lName" class='my-profile' contenteditable="false">Insert Last Name</span>
-  </br>
-  <span>Phone Number: </span>
-  <span id="phoneNumber" class='my-profile' contenteditable="false">Insert Phone Number</span>
-  </br>
-    <button class='edit-button' onclick="Editable()">Edit</button>
-    <button class='ok-button' onclick="NotEditable()">OK</button>
-  </div>
-  </div>
+          <div id="profileSettings">
+            <div id="profile-container">
+              <image id="profileImage" src="upload/default-no-image.png">
+            </div>
+            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+            <span>First Name: </span>
+            <span id="fName" class='my-profile' contenteditable="false">Insert First Name</span>
+          </br>
+            <span>Last Name: </span>
+            <span id="lName" class='my-profile' contenteditable="false">Insert Last Name</span>
+          </br>
+            <span>Phone Number: </span>
+            <span id="phoneNumber" class='my-profile' contenteditable="false">Insert Phone Number</span>
+          </br>
+            <button class='edit-button' onclick="Editable()">Edit</button>
+            <button class='ok-button' onclick="NotEditable()">OK</button>
+          </div>
+        </div>
+        <!-- Ends profile tab -->
         <div class="tab-pane" id="messages" role="tabpanel">Second Pane</div>
         <div class="tab-pane" id="settings" role="tabpanel">3rd PANE MANG!!</div>
     </div>

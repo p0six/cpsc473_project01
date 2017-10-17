@@ -1,5 +1,6 @@
 var dpd = window.dpd;
 
+//Allows the property cells to be editable
 function Editable() {
   var x = 0;
   for (x = 0; x < 3; ++x) {
@@ -16,6 +17,7 @@ function Editable() {
   });
 }
 
+//Remove the ability to edit properties
 function NotEditable() {
   for (x = 0; x < 3; ++x) {
     var p = document.getElementsByClassName("my-profile")[x];
@@ -32,6 +34,7 @@ function NotEditable() {
   saveProfile();
 }
 
+//Update the profile tab when clicked.
 function updateProfile() {
   var profileDisplay = document.getElementById("profileSettings");
   profileDisplay.style.display = "block";
@@ -41,24 +44,23 @@ function updateProfile() {
       $('#fName').text(user.firstName);
       $('#lName').text(user.lastName);
       $('#phoneNumber').text(user.phoneNumber);
-      console.log(user.profilePhoto);
       if (user.profilePhoto != null) {
       imageURL = user.profilePhoto;
       console.log(imageURL);
       document.getElementById("profileImage").src = imageURL;
     }
-      console.log(user.username);
-      console.log(user.lastName);
     }
   });
 }
 
+//Hides profile items onclick of other tabs.
 function hideProfile() {
   console.log("hideProfile called");
   var profileDisplay = document.getElementById("profileSettings");
   profileDisplay.style.display = "none";
 }
 
+//Saves profile data when clicking ok
 function saveProfile() {
   var fName = $('#fName').html();
   var lName = $('#lName').html();
@@ -80,6 +82,7 @@ $("#profileImage").click(function(e) {
     saveImage();
 });
 
+//Saves profile picture upon upload
 function fasterPreview( uploader ) {
     if ( uploader.files && uploader.files[0] ){
           $('#profileImage').attr('src',
