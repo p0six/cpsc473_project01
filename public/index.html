@@ -79,16 +79,16 @@
     <!-- BEGIN: Navigation tabs -->
     <ul class="nav nav-tabs" role="tablist">
       <li class="nav-item">
-        <a class="nav-link active" data-toggle="tab" href="#home" role="tab">Home</a>
+        <a class="nav-link active" data-toggle="tab" onclick="hideProfile()" href="#home" role="tab">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#profile" role="tab">Profile</a>
+        <a class="nav-link" data-toggle="tab" onclick="updateProfile()" href="#profile" role="tab">Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#messages" role="tab">Messages</a>
+        <a class="nav-link" data-toggle="tab" onclick="hideProfile()" href="#messages" role="tab">Messages</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#settings" role="tab">Settings</a>
+        <a class="nav-link" data-toggle="tab" onclick="hideProfile()" href="#settings" role="tab">Settings</a>
       </li>
     </ul>
     <!-- END: Navigation tabs -->
@@ -127,9 +127,28 @@
         <!-- BEGIN: Calendar Crap -->
       </div>
       <!-- end of 'home' tab -->
-      <div class="tab-pane" id="profile" role="tabpanel"></div>
-      <div class="tab-pane" id="messages" role="tabpanel"></div>
-      <div class="tab-pane" id="settings" role="tabpanel"></div>
+        <div class="tab-pane" id="profile" onclick="updateProfile()" role="tabpanel">
+        <div id="profileSettings">
+        <div id="profile-container">
+           <image id="profileImage" src="upload/default-no-image.png">
+           </div>
+        <input id="imageUpload" type="file"
+               name="profile_photo" placeholder="Photo" required="" capture>
+    <span>First Name: </span>
+    <span id="fName" class='my-profile' contenteditable="false">Insert First Name</span>
+  </br>
+    <span>Last Name: </span>
+    <span id="lName" class='my-profile' contenteditable="false">Insert Last Name</span>
+  </br>
+  <span>Phone Number: </span>
+  <span id="phoneNumber" class='my-profile' contenteditable="false">Insert Phone Number</span>
+  </br>
+    <button class='edit-button' onclick="Editable()">Edit</button>
+    <button class='ok-button' onclick="NotEditable()">OK</button>
+  </div>
+  </div>
+        <div class="tab-pane" id="messages" role="tabpanel">Second Pane</div>
+        <div class="tab-pane" id="settings" role="tabpanel">3rd PANE MANG!!</div>
     </div>
     <!-- END: Tab panes -->
   </div>
@@ -326,7 +345,7 @@
   <script type="text/javascript" src="/js/events.js"></script>
   <script type="text/javascript" src="/js/main.js"></script>
   <!-- BEGIN: Edit and Update Profile -->
-  <!--<script type="text/javascript" src="/js/profile.js"></script>-->
+  <script type="text/javascript" src="/js/profile.js"></script>
   <!-- BEGIN: Edit and Update Profile -->
 </body>
 

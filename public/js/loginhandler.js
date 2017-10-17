@@ -28,6 +28,7 @@ $(function() {
             $('#signInButton').hide();
             $('#logOutButton').show();
             $('#login-modal').modal('hide');
+            updateProfile();
           }
         });
         break;
@@ -55,6 +56,7 @@ $(function() {
               username: $rg_username,
               password: $rg_password
             });
+            updateProfile();
           }
         });
 
