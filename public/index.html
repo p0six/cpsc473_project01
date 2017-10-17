@@ -33,6 +33,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
         </ul>
+        <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#faq-modal">
+          FAQ
+        </button>
         <button type="button" class="btn btn-primary m-1" data-toggle="modal" data-target="#event-modal">
           Create Event
         </button>
@@ -105,26 +108,26 @@
       </div>
       <!-- end of 'home' tab -->
       <!-- Begin profile tab -->
-        <div class="tab-pane" id="profile" onclick="updateProfile()" role="tabpanel">
-          <div id="profileSettings">
-            <div id="profile-container">
-              <image id="profileImage" src="upload/default-no-image.png"></image>
-            </div>
-            <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
-            <span>First Name: </span>
-            <span id="fName" class="my-profile" contenteditable="false">Insert First Name</span>
-          <br>
-            <span>Last Name: </span>
-            <span id="lName" class="my-profile" contenteditable="false">Insert Last Name</span>
-          <br>
-            <span>Phone Number: </span>
-            <span id="phoneNumber" class="my-profile" contenteditable="false">Insert Phone Number</span>
-          <br>
-            <button class="edit-button" onclick="Editable()">Edit</button>
-            <button class="ok-button" onclick="NotEditable()">OK</button>
+      <div class="tab-pane" id="profile" onclick="updateProfile()" role="tabpanel">
+        <div id="profileSettings">
+          <div id="profile-container">
+            <image id="profileImage" src="upload/default-no-image.png"></image>
           </div>
+          <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+          <span>First Name: </span>
+          <span id="fName" class="my-profile" contenteditable="false">Insert First Name</span>
+          <br>
+          <span>Last Name: </span>
+          <span id="lName" class="my-profile" contenteditable="false">Insert Last Name</span>
+          <br>
+          <span>Phone Number: </span>
+          <span id="phoneNumber" class="my-profile" contenteditable="false">Insert Phone Number</span>
+          <br>
+          <button class="edit-button" onclick="Editable()">Edit</button>
+          <button class="ok-button" onclick="NotEditable()">OK</button>
         </div>
-        <!-- Ends profile tab -->
+      </div>
+      <!-- Ends profile tab -->
     </div>
     <!-- END: Tab panes -->
   </div>
@@ -198,7 +201,38 @@
     </div>
   </div>
   <!-- END # MODAL LOGIN -->
+  <!-- BEGIN: FAQ MODAL -->
+  <div class="modal fade" id="faq-modal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content" id="faq-modal-content">
+        <div class="modal-header" align="center">
+          <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    						<span aria-hidden="true">&times;</span>
+    			</button>
+        </div>
+      <div id="event-div-form">
+        <form id="faq-form">
+          <div class="modal-body" id="faq-modal-body">
+            EventFriendFinder helps students share events that are going on around community in order to find<br>
+            and connect with other students who are interested in going to the event.<br>
+            <br>
+            Anyone can flip through the calendar, image carousel or event list to view events going on for the month.<br>
+            Click on these options to view more information on the event.<br>
+            <br>
+            To get the full user experience you will need to log on or register. Once logged in you can create new<br>
+            events or sign yourself up on the attendee list.<br>
+            <br>
+            
 
+
+          </div>
+        </form>
+      </div>
+      </div>
+    </div>
+  </div>
+  <!-- END: FAQ MODAL -->
   <!-- BEGIN EVENT MODAL -->
   <div class="modal fade" id="event-modal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
