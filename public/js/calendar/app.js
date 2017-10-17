@@ -50,12 +50,12 @@
       }
 
       $('.myCarousel, .myEventList').click(function() {
-        $('#eventModalTitle').html($(this).data('event-title'));
         calendar._loadTemplate('modal');
         $.ajax({
           url: '/events/' + $(this).data('event-id'),
           context: document.body
         }).done(function(response) {
+          $('#eventModalTitle').html(response.title);
           $('#eventModalBody').html(calendar.options.templates['modal']({
             'event': response,
             'calendar': calendar
