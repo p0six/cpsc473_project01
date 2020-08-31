@@ -3,9 +3,26 @@
 ## Installation Instructions
 
 1. Install MongoDB
-2. Install DeployD
-3. dpd create EventFriendFinder
-4. cd EventFriendFinder
-5. git clone <git url>
-6. npm install dpd-fileupload --save 
-7. dpd
+2. Install NodeJS
+3. Install DeployD-Cli
+```
+sudo npm install deployd-cli -g
+```
+3. Clone Repository
+```
+git clone https://github.com/p0six/cpsc473_project01.git
+```
+4. Install dependencies
+```
+npm install
+pip3 install -r requirements.txt
+```
+5. Start DeployD Server
+```
+dpd -n deployd -H localhost -d -o
+```
+6. Populate Database with some Events
+```
+python3 eventData.py
+```
+7. Browse to http://localhost:1337/
