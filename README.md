@@ -20,6 +20,11 @@
 5. Start DeployD Server
     ```
     dpd -n deployd -H localhost -d -o
+
+	OR run as a daemon...
+	sudo npm install -g forever
+        forever start production.js
+
     ```
 6. Populate Database with some Events
     ```
