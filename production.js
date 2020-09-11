@@ -2,7 +2,7 @@
 var deployd = require('deployd');
 
 var server = deployd({
-  port: process.env.PORT || 5000,
+  port: process.env.PORT || 2403,
   env: 'production',
   db: {
     host: 'localhost',
