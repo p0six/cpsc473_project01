@@ -2,7 +2,7 @@
 
 ## Installation Instructions
 
-1. Install MongoDB
+1. Install MongoDB - brew reinstall mongodb-community@5.0 # 5.1 introduces breaking changes https://www.mongodb.com/docs/v6.0/release-notes/6.0-compatibility/#legacy-opcodes-removed
 2. Install NodeJS
 3. Install DeployD-Cli
     ```

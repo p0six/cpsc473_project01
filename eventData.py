@@ -9,8 +9,8 @@ def unix_time_millis(dt):
 
 my_events_json = [
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 14, 19, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 14, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 14, 19, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 14, 23, 0, 0, 0)),
       "title":"Dead Ringer Live at TAPS",
       "description":"Dead Ringer is a rockin Orange County cover band that nails the best pop & rock dance hits from the 80s all the way to today. Head over to TAPS for an evening of good food, libations and Rock-Pop-Drop-and-Roll!",
       "streetAddress":"13390 Jamboree Rd.",
@@ -19,8 +19,8 @@ my_events_json = [
       "eventImage":"upload/dead_ringer.jpg"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 16, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 16, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 16, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 16, 23, 0, 0, 0)),
       "title":"Carla Morrison",
       "description":"Mexican indie pop singer Carla Morrison is certified gold... in Mexico, that is. Her critically acclaimed Dejenme Llorar won numerous Latin Grammys for its soulful musical vision, that Morrison is seen as a strong force among other singer-songwriting contemporaries like Julieta Venegas and Natalia Lafourcade. But while she's still gaining wider prominence in the States, the Tecate-born singer has kept busy in numerous side projects including the launch of her Pan Dulce Productions, to support other young talents on the rise. This isn't Morrison's first performance in Orange County, but any time is a good time to experience her music live.",
       "streetAddress":"3503 S. Harbor Blvd.",
@@ -29,8 +29,8 @@ my_events_json = [
       "eventImage":"upload/carlamorrison.jpg"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 27, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 27, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 27, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 27, 23, 0, 0, 0)),
       "title":"Tiger Army",
       "description":"Tiger Army with Channel 3 & the Delta Bombers. Live at The Observatory, in Santa Ana.",
       "streetAddress":"3503 S. Harbor Blvd.",
@@ -39,8 +39,8 @@ my_events_json = [
       "eventImage":"upload/tigerarmy.jpg"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 24, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 24, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 24, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 24, 23, 0, 0, 0)),
       "title":"Crystal Castles",
       "description":"Crystal Castles. Live at The Observatory, in Santa Ana.",
       "streetAddress":"3503 S. Harbor Blvd.",
@@ -99,8 +99,8 @@ my_events_json = [
       "eventImage":"upload/yelawolf.jpg"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 29, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 29, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 29, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 29, 23, 0, 0, 0)),
       "title":"Radiohead",
       "description":"Just Kidding.  Haha you thought Radiohead was playing.",
       "streetAddress":"3503 S. Harbor Blvd.",
@@ -108,8 +108,8 @@ my_events_json = [
       "zip": "92704"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 29, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 29, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 29, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 29, 23, 0, 0, 0)),
       "title":"Black Star",
       "description":"Black Star. Mos Def and Talib Kweli. Live at The Observatory, in Santa Ana.",
       "streetAddress":"3503 S. Harbor Blvd.",
@@ -118,8 +118,8 @@ my_events_json = [
       "eventImage":"upload/blackstar.jpg"
    },
    {
-      "start": unix_time_millis(datetime.datetime(2020, 10, 23, 20, 0, 0, 0)),
-      "end": unix_time_millis(datetime.datetime(2020, 10, 23, 23, 0, 0, 0)),
+      "start": unix_time_millis(datetime.datetime(2025, 4, 23, 20, 0, 0, 0)),
+      "end": unix_time_millis(datetime.datetime(2025, 4, 23, 23, 0, 0, 0)),
       "title":"Real Estate",
       "description":"Real Estate. Live at The Observatory, in Santa Ana.",
       "streetAddress":"3503 S. Harbor Blvd.",
